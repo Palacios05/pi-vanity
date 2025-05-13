@@ -1,0 +1,236 @@
+[
+  {
+    "id": "11001",
+    "name": "Bogotá",
+    "province_id": "11",
+    "department_id": "11"
+  },
+  {
+    "id": "05001",
+    "name": "Medellín",
+    "province_id": "05",
+    "department_id": "05"
+  },
+  {
+    "id": "08001",
+    "name": "Barranquilla",
+    "province_id": "08",
+    "department_id": "08"
+  },
+  {
+    "id": "13001",
+    "name": "Cartagena",
+    "province_id": "13",
+    "department_id": "13"
+  },
+  {
+    "id": "68001",
+    "name": "Bucaramanga",
+    "province_id": "68",
+    "department_id": "68"
+  },
+  {
+    "id": "17001",
+    "name": "Manizales",
+    "province_id": "17",
+    "department_id": "17"
+  },
+  {
+    "id": "63001",
+    "name": "Armenia",
+    "province_id": "63",
+    "department_id": "63"
+  },
+  {
+    "id": "66001",
+    "name": "Pereira",
+    "province_id": "66",
+    "department_id": "66"
+  },
+  {
+    "id": "47001",
+    "name": "Santa Marta",
+    "province_id": "47",
+    "department_id": "47"
+  },
+  {
+    "id": "20001",
+    "name": "Valledupar",
+    "province_id": "20",
+    "department_id": "20"
+  },
+  {
+    "id": "44001",
+    "name": "Riohacha",
+    "province_id": "44",
+    "department_id": "44"
+  },
+  {
+    "id": "73001",
+    "name": "Ibagué",
+    "province_id": "73",
+    "department_id": "73"
+  },
+  {
+    "id": "50001",
+    "name": "Villavicencio",
+    "province_id": "50",
+    "department_id": "50"
+  },
+  {
+    "id": "52001",
+    "name": "Pasto",
+    "province_id": "52",
+    "department_id": "52"
+  },
+  {
+    "id": "54001",
+    "name": "Cúcuta",
+    "province_id": "54",
+    "department_id": "54"
+  },
+  {
+    "id": "41001",
+    "name": "Neiva",
+    "province_id": "41",
+    "department_id": "41"
+  },
+  {
+    "id": "23001",
+    "name": "Montería",
+    "province_id": "23",
+    "department_id": "23"
+  },
+  {
+    "id": "25001",
+    "name": "Girardot",
+    "province_id": "25",
+    "department_id": "25"
+  },
+  {
+    "id": "27001",
+    "name": "Quibdó",
+    "province_id": "27",
+    "department_id": "27"
+  },
+  {
+    "id": "81001",
+    "name": "Arauca",
+    "province_id": "81",
+    "department_id": "81"
+  },
+  {
+    "id": "85001",
+    "name": "Yopal",
+    "province_id": "85",
+    "department_id": "85"
+  },
+  {
+    "id": "88001",
+    "name": "San Andrés",
+    "province_id": "88",
+    "department_id": "88"
+  },
+  {
+    "id": "91001",
+    "name": "Leticia",
+    "province_id": "91",
+    "department_id": "91"
+  },
+  {
+    "id": "76001",
+    "name": "Cali",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76020",
+    "name": "Buenaventura",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76070",
+    "name": "Palmira",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76100",
+    "name": "Tuluá",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76233",
+    "name": "Cartago",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76245",
+    "name": "Buga",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76263",
+    "name": "Roldanillo",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76318",
+    "name": "La Victoria",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76364",
+    "name": "Zarzal",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76377",
+    "name": "Guacarí",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76400",
+    "name": "Yumbo",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76403",
+    "name": "El Cerrito",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76405",
+    "name": "Ginebra",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76409",
+    "name": "Roldanillo",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76412",
+    "name": "Restrepo",
+    "province_id": "76",
+    "department_id": "76"
+  },
+  {
+    "id": "76416",
+    "name": "La Cumbre",
+    "province_id": "76",
+    "department_id": "76"
+  }
+]

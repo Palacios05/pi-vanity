@@ -1,0 +1,167 @@
+[
+  {
+    "id": "05",
+    "name": "Antioquia",
+    "department_id": "01"
+  },
+  {
+    "id": "08",
+    "name": "Atlántico",
+    "department_id": "01"
+  },
+  {
+    "id": "11",
+    "name": "Bogotá D.C.",
+    "department_id": "01"
+  },
+  {
+    "id": "13",
+    "name": "Bolívar",
+    "department_id": "01"
+  },
+  {
+    "id": "15",
+    "name": "Boyacá",
+    "department_id": "01"
+  },
+  {
+    "id": "17",
+    "name": "Caldas",
+    "department_id": "01"
+  },
+  {
+    "id": "18",
+    "name": "Caquetá",
+    "department_id": "01"
+  },
+  {
+    "id": "19",
+    "name": "Cauca",
+    "department_id": "01"
+  },
+  {
+    "id": "20",
+    "name": "Cesar",
+    "department_id": "01"
+  },
+  {
+    "id": "23",
+    "name": "Córdoba",
+    "department_id": "01"
+  },
+  {
+    "id": "25",
+    "name": "Cundinamarca",
+    "department_id": "01"
+  },
+  {
+    "id": "27",
+    "name": "Chocó",
+    "department_id": "01"
+  },
+  {
+    "id": "41",
+    "name": "Huila",
+    "department_id": "01"
+  },
+  {
+    "id": "44",
+    "name": "La Guajira",
+    "department_id": "01"
+  },
+  {
+    "id": "47",
+    "name": "Magdalena",
+    "department_id": "01"
+  },
+  {
+    "id": "50",
+    "name": "Meta",
+    "department_id": "01"
+  },
+  {
+    "id": "52",
+    "name": "Nariño",
+    "department_id": "01"
+  },
+  {
+    "id": "54",
+    "name": "Norte de Santander",
+    "department_id": "01"
+  },
+  {
+    "id": "63",
+    "name": "Quindío",
+    "department_id": "01"
+  },
+  {
+    "id": "66",
+    "name": "Risaralda",
+    "department_id": "01"
+  },
+  {
+    "id": "68",
+    "name": "Santander",
+    "department_id": "01"
+  },
+  {
+    "id": "70",
+    "name": "Sucre",
+    "department_id": "01"
+  },
+  {
+    "id": "73",
+    "name": "Tolima",
+    "department_id": "01"
+  },
+  {
+    "id": "76",
+    "name": "Valle del Cauca",
+    "department_id": "01"
+  },
+  {
+    "id": "81",
+    "name": "Arauca",
+    "department_id": "01"
+  },
+  {
+    "id": "85",
+    "name": "Casanare",
+    "department_id": "01"
+  },
+  {
+    "id": "86",
+    "name": "Putumayo",
+    "department_id": "01"
+  },
+  {
+    "id": "88",
+    "name": "San Andrés y Providencia",
+    "department_id": "01"
+  },
+  {
+    "id": "91",
+    "name": "Amazonas",
+    "department_id": "01"
+  },
+  {
+    "id": "94",
+    "name": "Guainía",
+    "department_id": "01"
+  },
+  {
+    "id": "95",
+    "name": "Guaviare",
+    "department_id": "01"
+  },
+  {
+    "id": "97",
+    "name": "Vaupés",
+    "department_id": "01"
+  },
+  {
+    "id": "99",
+    "name": "Vichada",
+    "department_id": "01"
+  }
+]
