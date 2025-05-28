@@ -39,6 +39,8 @@ pnpm install
 pnpm run dev
 Esto iniciará el servidor de desarrollo en http://localhost:5173 (o en otro puerto disponible).
 
+---
+
 ⚙️ 2. Backend (api)
 📥 Instalación de dependencias
 Desde la raíz del proyecto, entra a la carpeta api:
@@ -66,6 +68,8 @@ php artisan key:generate
 
 php artisan serve
 Esto iniciará el backend en http://localhost:8000.
+
+---
 
 🗃️ 3. Base de Datos (db.sql)
 
