@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: vanity-api
+    env: docker
+    rootDir: .
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d4b9cgn5r7bs73918m5g-a.oregon-postgres.render.com
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: vanity_r9tz
+      - key: DB_USERNAME
+        value: vanity_r9tz_user
+      - key: DB_PASSWORD
+        sync: false  # te deja ponerla manual en Render (nunca en repo)
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
