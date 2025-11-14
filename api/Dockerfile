@@ -12,7 +12,8 @@ WORKDIR /var/www/html/api
 
 COPY api /var/www/html/api
 
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader \
+    && php artisan storage:link || true
 
 
 # Fase 2: Producción
@@ -25,7 +26,10 @@ COPY --from=builder /var/www/html /var/www/html
 
 COPY api/nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN chown -R www-data:www-data /var/www/html/api/storage /var/www/html/api/bootstrap/cache
+RUN chmod -R 755 /var/www/html/api/public \
+    && chmod -R 775 /var/www/html/api/storage \
+    && chmod -R 775 /var/www/html/api/bootstrap/cache \
+    && chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
 
