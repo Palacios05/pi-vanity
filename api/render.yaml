@@ -3,8 +3,8 @@ services:
     name: vanity-api
     env: docker
     plan: free
-    rootDir: .
-    dockerfilePath: ./Dockerfile
+    rootDir: api
+    dockerfilePath: api/Dockerfile
     autoDeploy: true
     envVars:
       - key: APP_ENV
