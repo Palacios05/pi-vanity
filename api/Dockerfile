@@ -42,7 +42,7 @@ RUN apt-get update && apt-get install -y nginx libpq-dev \
 COPY --from=builder /var/www/html /var/www/html
 
 # Copiar configuración de Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY api/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Permisos para storage y cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
