@@ -1,62 +1,65 @@
 <?php
-  
+
 namespace App\Http\Controllers;
-  
+
 use Validator;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
-  
-  
+
+
 class AuthController extends Controller
 {
- 
+
     /**
      * Register a User.
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function register() {
-        Gate::authorize('create',User::class);
-        
+    public function register()
+    {
+        Gate::authorize('create', User::class);
+
         $validator = Validator::make(request()->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
         ]);
-  
+
         if($validator->fails()){
             return response()->json($validator->errors()->toJson(), 400);
         }
-  
+
         $user = new User;
         $user->name = request()->name;
         $user->email = request()->email;
         $user->password = bcrypt(request()->password);
         $user->save();
-  
+
         return response()->json($user, 201);
     }
-  
-  
+
+
     /**
-     * Get a JWT via given credentials.
+     * Login User.
      *
      * @return \Illuminate\Http\JsonResponse
      */
     public function login()
     {
         $credentials = request(['email', 'password']);
-  
+
         if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json([
+                'error' => 'Unauthorized'
+            ], 401);
         }
-  
+
         return $this->respondWithToken($token);
     }
-  
+
     /**
-     * Get the authenticated User.
+     * Get authenticated user.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -64,21 +67,23 @@ class AuthController extends Controller
     {
         return response()->json(auth()->user());
     }
-  
+
     /**
-     * Log the user out (Invalidate the token).
+     * Logout user.
      *
      * @return \Illuminate\Http\JsonResponse
      */
     public function logout()
     {
         auth()->logout();
-  
-        return response()->json(['message' => 'Successfully logged out']);
+
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
     }
-  
+
     /**
-     * Refresh a token.
+     * Refresh token.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -86,37 +91,66 @@ class AuthController extends Controller
     {
         return $this->respondWithToken(auth()->refresh());
     }
-  
+
     /**
-     * Get the token array structure.
+     * Token response.
      *
-     * @param  string $token
+     * @param string $token
      *
      * @return \Illuminate\Http\JsonResponse
      */
     protected function respondWithToken($token)
     {
-        $permissions = auth('api')->user()->getAllPermissions()->map(function($permission) {
+        $user = auth('api')->user();
+
+        $permissions = $user->getAllPermissions()->map(function($permission) {
             return $permission->name;
         });
+
+
         return response()->json([
+
             'access_token' => $token,
+
             'token_type' => 'bearer',
+
             'expires_in' => auth('api')->factory()->getTTL() * 60,
+
+
             "user" => [
-                "full_name" => auth('api')->user()->name.' '.auth('api')->user()->surname,
-                "email" => auth('api')->user()->email,
-                "avatar" => auth('api')->user()->avatar ? env("APP_URL")."storage/".auth('api')->user()->avatar : NULL,
-                "sucursale_id" => auth('api')->user()->sucursale_id,
-                "sucursale" => [
-                    "name" => auth('api')->user()->sucursale->name,
-                ],
-                "role" => [
-                    "id" => auth('api')->user()->role->id,
-                    "name" => auth('api')->user()->role->name
-                ],
+
+                "full_name" => $user->name . ' ' . $user->surname,
+
+                "email" => $user->email,
+
+
+                "avatar" => $user->avatar
+                    ? env("APP_URL") . "storage/" . $user->avatar
+                    : null,
+
+
+                "sucursale_id" => $user->sucursale_id,
+
+
+                "sucursale" => $user->sucursale
+                    ? [
+                        "name" => $user->sucursale->name,
+                    ]
+                    : null,
+
+
+                "role" => $user->role
+                    ? [
+                        "id" => $user->role->id,
+                        "name" => $user->role->name
+                    ]
+                    : null,
+
+
                 "permissions" => $permissions,
+
             ]
+
         ]);
     }
 }

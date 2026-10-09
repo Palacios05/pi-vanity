@@ -24,7 +24,7 @@ class UserController extends Controller
         $search = $request->get("search", ''); // Obtener el parámetro de búsqueda
 
         // Realizar la consulta, incluyendo las relaciones de "role" y "sucursale"
-        $users = User::with(['role', 'sucursale']) // Cargar las relaciones
+        $users = User::with(['roles', 'sucursale']) // Cargar las relaciones
             ->where(DB::raw("users.name || ' ' || COALESCE(users.surname,'') || ' ' || users.email || ' ' || COALESCE(users.phone,'')"), "ilike", "%" . $search . "%") // Filtrar por los campos concatenados
             ->orderBy("id", "desc") // Ordenar por ID en orden descendente
             ->get(); // Obtener los resultados
@@ -39,7 +39,7 @@ class UserController extends Controller
                     "email" => $user->email,
                     "role_id" => (int) $user->role_id,
                     "role" => [
-                        "name" => $user->role->name, // Relación "role"
+                        "name" => $user->roles->first()?->name, // Relación "role"
                     ],
                     "phone" => $user->phone,
                     "state" => $user->state,
@@ -118,7 +118,7 @@ class UserController extends Controller
                 "role_id" => (int) $user->role_id,
                 "state" => $user->state,
                 "role" => [
-                    "name" => $user->role->name,
+                    "name" => $user->roles->first()?->name,
                 ],
                 "phone" => $user->phone,
                 "sucursale_id" => (int) $user->sucursale_id,
@@ -190,7 +190,7 @@ class UserController extends Controller
                 "email" => $user->email,
                 "role_id" => (int) $user->role_id,
                 "role" => [
-                    "name" => $user->role->name,
+                    "name" => $user->roles->first()?->name,
                 ],
                 "phone" => $user->phone,
                 "state" => $user->state,

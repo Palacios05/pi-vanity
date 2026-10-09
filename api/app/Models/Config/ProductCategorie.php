@@ -9,12 +9,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProductCategorie extends Model
 {
     use SoftDeletes;
+
+    protected $table = "product_categories";
+
     protected $fillable = [
         "title",
         "imagen",
         "state"
     ];
-    
+
     public function setCreatedAtAttribute($value)
     {
     	date_default_timezone_set('America/Lima');
