@@ -128,7 +128,7 @@ class AuthController extends Controller
 
 
                 "avatar" => $user->avatar
-                    ? env("APP_URL") . "storage/" . $user->avatar
+                    ? url("storage/" . $user->avatar)
                     : null,
 
 

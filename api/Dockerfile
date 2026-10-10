@@ -23,12 +23,14 @@ RUN composer dump-autoload --no-dev --optimize \
 
 
 # Fase 2: producción
+# Fase 2: producción
 FROM php:8.2-fpm
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    nginx libpq-dev libpng16-16 libjpeg62-turbo libfreetype6-dev \
+    nginx libpq-dev libpng-dev libjpeg-dev libfreetype6-dev \
     libzip-dev libonig-dev \
-    && docker-php-ext-install pdo_pgsql mbstring zip \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_pgsql mbstring zip gd \
     && rm -f /etc/nginx/sites-enabled/default \
     && rm -rf /var/lib/apt/lists/*
 
@@ -37,7 +39,7 @@ WORKDIR /var/www/html/api
 COPY --from=builder /var/www/html/api /var/www/html/api
 COPY api/nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN mkdir -p storage/framework/cache storage/framework/sessions \
+RUN mkdir -p storage/app/public storage/framework/cache storage/framework/sessions \
     storage/framework/views storage/logs bootstrap/cache \
     && ln -sfn /var/www/html/api/storage/app/public /var/www/html/api/public/storage \
     && chown -R www-data:www-data storage bootstrap/cache \
