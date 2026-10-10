@@ -61,4 +61,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo(Sucursale::class, 'sucursale_id');
     }
+
+    public function role()
+    {
+    return $this->belongsTo(\Spatie\Permission\Models\Role::class, 'role_id');
+    }
 }
