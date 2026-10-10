@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     nginx libpq-dev libpng16-16 libjpeg62-turbo libfreetype6-dev \
     libzip-dev libonig-dev \
     && docker-php-ext-install pdo_pgsql mbstring zip \
+    && rm -f /etc/nginx/sites-enabled/default \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html/api
