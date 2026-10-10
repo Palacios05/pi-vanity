@@ -13,7 +13,7 @@ class RefoundProductPolicy
      */
     public function viewAny(User $user): bool
     {
-        if($user->can("")){
+        if($user->can("return")){
 
         }
         return false;

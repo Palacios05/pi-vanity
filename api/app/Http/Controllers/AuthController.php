@@ -17,27 +17,30 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register()
-    {
-        Gate::authorize('create', User::class);
+{
+    Gate::authorize('create', User::class);
 
-        $validator = Validator::make(request()->all(), [
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-        ]);
+    $validator = Validator::make(request()->all(), [
+        'name' => 'required',
+        'surname' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:8',
+    ]);
 
-        if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
-        }
-
-        $user = new User;
-        $user->name = request()->name;
-        $user->email = request()->email;
-        $user->password = bcrypt(request()->password);
-        $user->save();
-
-        return response()->json($user, 201);
+    if($validator->fails()){
+        return response()->json($validator->errors()->toJson(), 400);
     }
+
+    $user = new User;
+    $user->name = request()->name;
+    $user->surname = request()->surname;
+    $user->email = request()->email;
+    $user->password = request()->password;
+    $user->sucursale_id = request()->sucursale_id;
+    $user->save();
+
+    return response()->json($user, 201);
+}
 
 
     /**
