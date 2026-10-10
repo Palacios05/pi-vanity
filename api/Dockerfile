@@ -46,4 +46,4 @@ RUN mkdir -p storage/framework/cache storage/framework/sessions \
 
 EXPOSE 80
 
-CMD ["sh", "-c", "php artisan migrate --force && php-fpm -D && exec nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "php-fpm -D && exec nginx -g 'daemon off;'"]
