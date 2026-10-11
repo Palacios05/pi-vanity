@@ -189,23 +189,6 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
                   Create an account
                 </a>
               </VCol> -->
-
-              <VCol
-                cols="12"
-                class="d-flex align-center"
-              >
-                <VDivider />
-                <span class="mx-4 text-high-emphasis">or</span>
-                <VDivider />
-              </VCol>
-
-              <!-- auth providers -->
-              <VCol
-                cols="12"
-                class="text-center"
-              >
-                <AuthProvider />
-              </VCol>
             </VRow>
           </VForm>
         </VCardText>
