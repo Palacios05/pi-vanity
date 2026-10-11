@@ -42,12 +42,12 @@ class UserController extends Controller
                         "name" => $user->roles->first()?->name, // Relación "role"
                     ],
                     "phone" => $user->phone,
-                    "state" => $user->state,
+                    "state" => $user->state ? 1 : 2,
                     "sucursale_id" => (int) $user->sucursale_id,
                     "sucursale" => [
                         "name" => $user->sucursale->name, // Relación "sucursale"
                     ],
-                    "avatar" => $user->avatar ? env("APP_URL") . "storage/" . $user->avatar : null, // Avatar con URL
+                    "avatar" => $user->avatar ? url('storage/' . $user->avatar) : null, // Avatar con URL
                     "type_document" => $user->type_document,
                     "n_document" => $user->n_document,
                     "gender" => $user->gender,
@@ -100,10 +100,12 @@ class UserController extends Controller
             $path = Storage::putFile("users",$request->file("imagen"));
             $request->request->add(["avatar" => $path]);
         }
-        if($request->password){
-            $request->request->add(["password" => bcrypt($request->password)]);
+        
+        $data = $request->all();
+        if ($request->has('state')) {
+            $data['state'] = ((int) $request->state) === 1;
         }
-        $user = User::create($request->all());
+        $user = User::create($data);
         $role = Role::findOrFail($request->role_id);
         $user->assignRole($role);
 
@@ -116,7 +118,7 @@ class UserController extends Controller
                 "full_name" => $user->name . ' ' . $user->surname,
                 "email" => $user->email,
                 "role_id" => (int) $user->role_id,
-                "state" => $user->state,
+                "state" => $user->state ? 1 : 2,
                 "role" => [
                     "name" => $user->roles->first()?->name,
                 ],
@@ -125,7 +127,7 @@ class UserController extends Controller
                 "sucursale" => [
                     "name" => $user->sucursale->name,
                 ],
-                "avatar" => $user->avatar ? env("APP_URL")."storage/".$user->avatar : NULL,
+                "avatar" => $user->avatar ? url('storage/' . $user->avatar) : NULL,
                 "type_document" =>$user->type_document,
                 "n_document" =>$user->n_document,
                 "gender" =>$user->gender,
@@ -167,10 +169,17 @@ class UserController extends Controller
             $path = Storage::putFile("users",$request->file("imagen"));
             $request->request->add(["avatar" => $path]);
         }
-        if($request->password){
-            $request->request->add(["password" => bcrypt($request->password)]);
+        
+        $data = $request->all();
+        if ($request->has('state')) {
+            $data['state'] = ((int) $request->state) === 1;
         }
-        $user->update($request->all());
+
+        if (empty($data['password'])) {
+            unset($data['password']);
+        }
+
+        $user->update($data);
         // CONTADOR -> ADMINISTRADOR DE CUENTA
         if($request->role_id != $user->role_id){
             $role_old =  Role::findOrFail($user->role_id);
@@ -193,12 +202,12 @@ class UserController extends Controller
                     "name" => $user->roles->first()?->name,
                 ],
                 "phone" => $user->phone,
-                "state" => $user->state,
+                "state" => $user->state ? 1 : 2,
                 "sucursale_id" => (int) $user->sucursale_id,
                 "sucursale" => [
                     "name" => $user->sucursale->name,
                 ],
-                "avatar" => $user->avatar ? env("APP_URL")."storage/".$user->avatar : NULL,
+                "avatar" => $user->avatar ? url('storage/' . $user->avatar) : NULL,
                 "type_document" =>$user->type_document,
                 "n_document" =>$user->n_document,
                 "gender" =>$user->gender,

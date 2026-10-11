@@ -388,7 +388,7 @@ class KpiController extends Controller
             $categories_products->push([
                 "id" => $categories_most_sale->product_categorie_id,
                 "name" => $categories_most_sale->categorie,
-                "imagen" => env("APP_URL")."storage/".$categories_most_sale->categorie_imagen,
+                "imagen" => url('storage/' . $categories_most_sale->categorie_imagen),
                 "total_sales" => round($categories_most_sale->total_sales,2),
                 "count" => $categories_most_sale->count_sales,
                 "products" => $product_most_sale_of_categorie->map(function($product) {
@@ -397,7 +397,7 @@ class KpiController extends Controller
                         if(str_contains($product->product_imagen,"https://") || str_contains($product->product_imagen,"http://")){
                             $link = $product->product_imagen;
                         }else{
-                            $link =  env('APP_URL').'storage/'.$product->product_imagen;
+                            $link =  url('storage/' . $product->product_imagen);
                         }
                     }
                     $product->product_imagen = $link;

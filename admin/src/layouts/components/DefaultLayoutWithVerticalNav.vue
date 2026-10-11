@@ -103,6 +103,32 @@ onMounted(() => {
     }
 })
 
+// Cierre de sesión por inactividad
+const INACTIVITY_MINUTES = 5
+const ACTIVITY_EVENTS = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart']
+let inactivityTimer = null
+
+const logoutByInactivity = () => {
+  localStorage.removeItem('token')
+  localStorage.removeItem('user')
+  window.location.href = '/login?expired=1'
+}
+
+const resetInactivityTimer = () => {
+  clearTimeout(inactivityTimer)
+  inactivityTimer = setTimeout(logoutByInactivity, INACTIVITY_MINUTES * 60 * 1000)
+}
+
+onMounted(() => {
+  ACTIVITY_EVENTS.forEach(evt => window.addEventListener(evt, resetInactivityTimer))
+  resetInactivityTimer()
+})
+
+onBeforeUnmount(() => {
+  clearTimeout(inactivityTimer)
+  ACTIVITY_EVENTS.forEach(evt => window.removeEventListener(evt, resetInactivityTimer))
+})
+
 </script>
 
 <template>

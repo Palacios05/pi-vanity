@@ -1,6 +1,5 @@
 <script setup>
 import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant'
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import authV2LoginIllustrationBorderedDark from '@images/pages/auth-v2-login-illustration-bordered-dark.png'
 import authV2LoginIllustrationBorderedLight from '@images/pages/auth-v2-login-illustration-bordered-light.png'
 import authV2LoginIllustrationDark from '@images/pages/auth-v2-login-illustration-dark.png'
@@ -19,6 +18,7 @@ const error_exits = ref(null);
 const success_exits = ref(null);
 const route = useRoute()
 const router = useRouter()
+const sessionExpired = route.query.expired === '1'
 
 const login = async() => {
   try {
@@ -104,6 +104,12 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
           <p class="mb-0">
             Inicia sesión en tu cuenta para continuar
           </p>
+        </VCardText>
+
+        <VCardText v-if="sessionExpired" class="pb-0">
+          <VAlert type="warning" variant="tonal">
+            Tu sesión se cerró por inactividad. Inicia sesión de nuevo.
+          </VAlert>
         </VCardText>
 
         <VCardText>
