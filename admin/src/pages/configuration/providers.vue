@@ -13,7 +13,7 @@
             key: 'ruc',
         },
         {
-            title: 'Email',
+            title: 'Correo',
             key: 'email',
         },
         {

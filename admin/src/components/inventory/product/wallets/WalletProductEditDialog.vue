@@ -217,7 +217,7 @@ onMounted(() => {
             >
               <VAlert
                 closable
-                close-label="Close Alert"
+                close-label="Cerrar alerta"
                 color="warning"
               >
               {{ warning }}
@@ -229,7 +229,7 @@ onMounted(() => {
             >
               <VAlert
                 closable
-                close-label="Close Alert"
+                close-label="Cerrar alerta"
                 color="error"
               >
               {{ error_exits }}
@@ -241,7 +241,7 @@ onMounted(() => {
             >
               <VAlert
                 closable
-                close-label="Close Alert"
+                close-label="Cerrar alerta"
                 color="success"
               >
               {{ success }}

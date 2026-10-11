@@ -6,7 +6,7 @@
             key: 'id',
         },
         {
-            title: 'Role',
+            title: 'Rol',
             key: 'name',
         },
         {
@@ -18,7 +18,7 @@
             key: 'permissions_pluck',
         },
         {
-            title: 'Action',
+            title: 'Acciones',
             key: 'action',
         },
     ]

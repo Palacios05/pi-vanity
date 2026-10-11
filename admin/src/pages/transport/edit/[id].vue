@@ -684,7 +684,7 @@
                                 </td>
                                 <td>
                                     <VTextField
-                                        label="Igv"
+                                        label="IVA"
                                         placeholder=""
                                         type="number"
                                         v-model="igv"

@@ -21,7 +21,7 @@
         //     key: 'sucursale',
         // },
         {
-            title: 'Email',
+            title: 'Correo',
             key: 'email',
         },
         {

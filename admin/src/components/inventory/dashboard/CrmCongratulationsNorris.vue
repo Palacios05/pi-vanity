@@ -32,7 +32,7 @@ onMounted(() => {
           Felicitaciones <strong>{{client_most_sale ? client_most_sale.client_most_sale : 'No hay cliente'}}!</strong> <span class="text-high-emphasis">🎉</span>
         </h5>
         <div class="text-subtitle-1">
-          The best client
+          El mejor cliente
         </div>
       </div>
       <h4 class="text-h4 text-primary">

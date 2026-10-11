@@ -114,7 +114,7 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
                 <VTextField
                   v-model="form.email"
                   autofocus
-                  label="Email"
+                  label="Correo electrónico"
                   type="email"
                   placeholder="johndoe@email.com"
                 />
