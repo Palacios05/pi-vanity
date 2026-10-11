@@ -42,7 +42,7 @@ onMounted(() => {
         + {{variation_percentage_client_most_sale}}%<span class="text-high-emphasis">🚀</span>
       </div>
       <div class="text-body-1 mb-3 text-error" v-if="variation_percentage_client_most_sale < 0">
-        - {{variation_percentage_client_most_sale}}%<span class="text-high-emphasis">🚀</span>
+        {{variation_percentage_client_most_sale}}%<span class="text-high-emphasis">🚀</span>
       </div>
     </VCardText>
 

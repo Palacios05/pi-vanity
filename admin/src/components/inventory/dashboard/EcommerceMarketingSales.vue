@@ -125,7 +125,7 @@ onMounted(() => {
 
             <div class="d-inline-block text-error font-weight-medium" v-if="item.variation_perncetage_sale_total < 0">
               <div class="d-flex align-center">
-                -{{item.variation_perncetage_sale_total}}%
+                {{item.variation_perncetage_sale_total}}%
                 <VIcon
                   icon="ri-arrow-down-s-line"
                   size="20"
