@@ -124,7 +124,7 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
               <VCol cols="12">
                 <VTextField
                   v-model="form.password"
-                  label="Password"
+                  label="Contraseña"
                   placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
@@ -153,7 +153,7 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
                 <!-- <div class="d-flex align-center justify-space-between flex-wrap my-6 gap-x-2">
                   <VCheckbox
                     v-model="form.remember"
-                    label="Remember me"
+                    label="Recordarme"
                   />
 
                   <a

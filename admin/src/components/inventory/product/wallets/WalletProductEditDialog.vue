@@ -203,7 +203,7 @@ onMounted(() => {
                 md="6"
             >
                 <VTextField
-                  label="Price"
+                  label="Precio"
                   type="number"
                   v-model="price"
                   placeholder=""

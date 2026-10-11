@@ -25,7 +25,7 @@
             key: 'created_at',
         },
         {
-            title: 'Action',
+            title: 'Acciones',
             key: 'action',
         },
     ]

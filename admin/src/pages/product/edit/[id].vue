@@ -540,7 +540,7 @@ definePage({ meta: { permission: 'edit_product', } });
           >
             <VAlert
               closable
-              close-label="Close Alert"
+              close-label="Cerrar alerta"
               color="warning"
             >
             {{ warning }}
@@ -552,7 +552,7 @@ definePage({ meta: { permission: 'edit_product', } });
           >
             <VAlert
               closable
-              close-label="Close Alert"
+              close-label="Cerrar alerta"
               color="error"
             >
             {{ error_exits }}
@@ -564,7 +564,7 @@ definePage({ meta: { permission: 'edit_product', } });
           >
             <VAlert
               closable
-              close-label="Close Alert"
+              close-label="Cerrar alerta"
               color="success"
             >
             {{ success }}
@@ -741,7 +741,7 @@ definePage({ meta: { permission: 'edit_product', } });
               >
                 <VAlert
                   closable
-                  close-label="Close Alert"
+                  close-label="Cerrar alerta"
                   color="warning"
                 >
                 {{ warning_stock }}
@@ -881,7 +881,7 @@ definePage({ meta: { permission: 'edit_product', } });
                 md="2"
               >
                 <VTextField
-                  label="Price"
+                  label="Precio"
                   type="number"
                   v-model="price"
                   placeholder=""
@@ -903,7 +903,7 @@ definePage({ meta: { permission: 'edit_product', } });
               >
                 <VAlert
                   closable
-                  close-label="Close Alert"
+                  close-label="Cerrar alerta"
                   color="warning"
                 >
                 {{ warning_price }}

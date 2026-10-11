@@ -21,7 +21,7 @@
             key: 'state',
         },
         {
-            title: 'Action',
+            title: 'Acciones',
             key: 'action',
         },
     ]

@@ -20,7 +20,7 @@
         console.log(resp);
         statisticsVertical.value = [
             {
-              title: 'Total Sales',
+              title: 'Ventas totales',
               color: 'primary',
               icon: 'ri-shopping-cart-line',
               stats: '$ '+resp.total_sales_month_current,
@@ -34,7 +34,7 @@
               change: resp.variation_percentage_sucursal_most_sale,
             },
             {
-              title: 'Total Purchase',
+              title: 'Compras totales',
               color: 'secondary',
               icon: 'ri-truck-line',
               stats: '$ '+resp.purchase_total_month_current,

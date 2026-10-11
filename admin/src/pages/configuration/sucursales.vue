@@ -18,7 +18,7 @@
         },
         
         {
-            title: 'Action',
+            title: 'Acciones',
             key: 'action',
         },
     ]

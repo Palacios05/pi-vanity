@@ -36,7 +36,7 @@
     <VCardText>
       <div class="d-flex align-center justify-space-between">
         <div class="text-body-1">
-          Total Visits
+          Ventas cobradas
         </div>
         <div class="d-flex justify-center" v-if="variation_percentage_sale_total_payment_complete >= 0">
           <span class="text-success">+{{variation_percentage_sale_total_payment_complete}}%</span>

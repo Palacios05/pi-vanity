@@ -29,7 +29,7 @@ onMounted(() => {
     <VCardText>
       <div class="mb-3">
         <h5 class="text-h5 text-wrap">
-          Congratulations <strong>{{client_most_sale ? client_most_sale.client_most_sale : 'No hay cliente'}}!</strong> <span class="text-high-emphasis">🎉</span>
+          Felicitaciones <strong>{{client_most_sale ? client_most_sale.client_most_sale : 'No hay cliente'}}!</strong> <span class="text-high-emphasis">🎉</span>
         </h5>
         <div class="text-subtitle-1">
           The best client
