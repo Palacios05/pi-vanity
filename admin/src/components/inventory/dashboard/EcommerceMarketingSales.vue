@@ -123,7 +123,7 @@ onMounted(() => {
               </div>
             </div>
 
-            <div class="d-inline-block text-danger font-weight-medium" v-if="item.variation_perncetage_sale_total < 0">
+            <div class="d-inline-block text-error font-weight-medium" v-if="item.variation_perncetage_sale_total < 0">
               <div class="d-flex align-center">
                 -{{item.variation_perncetage_sale_total}}%
                 <VIcon
@@ -178,7 +178,7 @@ onMounted(() => {
                     {{ item.n_cotizaciones }}
                     </div>
                     <div class="text-body-1 text-white text-truncate">
-                      N° Cotizaciónes
+                      N° Cotizaciones
                     </div>
                   </VCol>
 

@@ -240,15 +240,15 @@ onMounted(() => {
 
 <template>
   <VCard
-    title="Categories most sales"
-    subtitle="Number of Sales"
+    title="Categorías más vendidas"
+    subtitle="Número de ventas"
   >
     <template #append>
       <VRow style="width: 350px;">
         <VCol cols="6">
           <VSelect
             :items="year_list"
-            placeholder="Select"
+            placeholder="Seleccionar"
             v-model="year_selected"
             label="Año"
           />
@@ -258,7 +258,7 @@ onMounted(() => {
             :items="month_list"
             item-value="id"
             item-title="name"
-            placeholder="Select"
+            placeholder="Seleccionar"
             v-model="month_selected"
             label="Mes"
           />
@@ -323,28 +323,28 @@ onMounted(() => {
       <thead>
         <tr>
           <th scope="col">
-            IMAGE
+            IMAGEN
           </th>
           <th scope="col">
-            NAME
+            NOMBRE
           </th>
           <th
             scope="col"
             class="text-end"
           >
-            STATUS
+            ESTADO
           </th>
           <th
             scope="col"
             class="text-end"
           >
-            TOTAL SALES
+            TOTAL VENTAS
           </th>
           <th
             scope="col"
             class="text-end"
           >
-            N° SALES
+            N° VENTAS
           </th>
         </tr>
       </thead>

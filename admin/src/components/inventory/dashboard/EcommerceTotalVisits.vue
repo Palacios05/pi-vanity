@@ -47,10 +47,10 @@
           />
         </div>
         <div class="d-flex justify-center" v-if="variation_percentage_sale_total_payment_complete < 0">
-          <span class="text-danger">-{{variation_percentage_sale_total_payment_complete}}%</span>
+          <span class="text-error">-{{variation_percentage_sale_total_payment_complete}}%</span>
           <VIcon
             icon="ri-arrow-down-s-line"
-            color="danger"
+            color="error"
             size="20"
           />
         </div>

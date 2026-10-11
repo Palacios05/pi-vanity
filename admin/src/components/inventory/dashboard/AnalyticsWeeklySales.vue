@@ -120,12 +120,12 @@ const sales_for_month_year = async() => {
     series.value = [
       {
         type: 'column',
-        name: 'Earning',
+        name: 'Ventas',
         data: sales_of_month_year_current,
       },
       {
         type: 'column',
-        name: 'Expense',
+        name: 'Año anterior',
         data: [
           0,
           0,
@@ -143,7 +143,7 @@ const sales_for_month_year = async() => {
       },
       {
         type: 'line',
-        name: 'Expense',
+        name: 'Año anterior',
         data: sales_of_month_year_before,
       },
     ]
@@ -183,8 +183,8 @@ onMounted(() => {
 
 <template>
   <VCard
-    title="Sales x Year"
-    subtitle="Total 85.4k Sales"
+    title="Ventas por año"
+    subtitle="Comparativo con el año anterior"
   >
     <template #append>
       <VRow style="width: 350px;">
