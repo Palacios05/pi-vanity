@@ -34,13 +34,13 @@ const update = async() => {
   success.value = null;
   if(!full_name.value){
     setTimeout(() => {
-      warning.value = "Se debe llenar el nombre del provedor";
+      warning.value = "Se debe llenar el nombre del proveedor";
     }, 50);
     return;
   }
   if(!phone.value){
     setTimeout(() => {
-      warning.value = "Se debe llenar la telefono del provedor";
+      warning.value = "Se debe llenar el teléfono del proveedor";
     }, 50);
     return;
   }

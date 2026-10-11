@@ -10,7 +10,7 @@ const { open, onChange } = useFileDialog({ accept: 'image/*',multiple:false })
 function onDrop(DroppedFiles) {
   DroppedFiles?.forEach(file => {
     if (file.type.slice(0, 6) !== 'image/') {
-      alert('Only image files are allowed')
+      alert('Solo se permiten archivos de imagen')
       
       return
     }

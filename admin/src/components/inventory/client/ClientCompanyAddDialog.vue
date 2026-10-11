@@ -58,19 +58,19 @@ const store = async() => {
   }
   if(!n_document.value){
     setTimeout(() => {
-      warning.value = "Se debe llenar el n° de document de la empresa";
+      warning.value = "Se debe llenar el n° de documento de la empresa";
     }, 50);
     return;
   }
   if(!type_document.value){
     setTimeout(() => {
-      warning.value = "Se debe un tipo de documento de la empresa";
+      warning.value = "Se debe seleccionar un tipo de documento de la empresa";
     }, 50);
     return;
   }
   if(!ubigeo_region.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar una region de la empresa";
+      warning.value = "Se debe seleccionar una región de la empresa";
     }, 50);
     return;
   }
@@ -82,13 +82,13 @@ const store = async() => {
   }
   if(!ubigeo_distrito.value){
     setTimeout(() => {
-      warning.value = "Se debe debe seleccionar un distrito de la empresa";
+      warning.value = "Se debe seleccionar un distrito de la empresa";
     }, 50);
     return;
   }
   if(!address.value){
     setTimeout(() => {
-      warning.value = "Se debe debe una dirección de la empresa";
+      warning.value = "Se debe ingresar una dirección de la empresa";
     }, 50);
     return;
   }

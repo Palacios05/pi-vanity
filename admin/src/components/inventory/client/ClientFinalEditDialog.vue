@@ -72,19 +72,19 @@ const update = async() => {
   }
   if(!n_document.value){
     setTimeout(() => {
-      warning.value = "Se debe llenar el n° de document del cliente";
+      warning.value = "Se debe llenar el n° de documento del cliente";
     }, 50);
     return;
   }
   if(!type_document.value){
     setTimeout(() => {
-      warning.value = "Se debe un tipo de documento para el cliente";
+      warning.value = "Se debe seleccionar un tipo de documento para el cliente";
     }, 50);
     return;
   }
   if(!ubigeo_region.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar una region para el cliente";
+      warning.value = "Se debe seleccionar una región para el cliente";
     }, 50);
     return;
   }
@@ -96,13 +96,13 @@ const update = async() => {
   }
   if(!ubigeo_distrito.value){
     setTimeout(() => {
-      warning.value = "Se debe debe seleccionar un distrito para el cliente";
+      warning.value = "Se debe seleccionar un distrito para el cliente";
     }, 50);
     return;
   }
   if(!address.value){
     setTimeout(() => {
-      warning.value = "Se debe debe una dirección para el cliente";
+      warning.value = "Se debe ingresar una dirección para el cliente";
     }, 50);
     return;
   }

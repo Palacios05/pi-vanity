@@ -29,13 +29,13 @@ const update = async() => {
   success.value = null;
   if(!name.value){
     setTimeout(() => {
-      warning.value = "Se debe llenar un nombre para la categoria";
+      warning.value = "Se debe llenar un nombre para la categoría";
     }, 50);
     return;
   }
     //   if(!FILE_IMAGEN.value){
     //     setTimeout(() => {
-    //       warning.value = "Se debe subir una imagen para la categoria";
+    //       warning.value = "Se debe subir una imagen para la categoría";
     //     }, 50);
     //     return;
     //   }
