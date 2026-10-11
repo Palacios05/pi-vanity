@@ -51,7 +51,7 @@ onMounted(() => {
       let permissions = USER.permissions;
       navItems.forEach((nav) => {
         // SI EL USUARIO ES SUPER-ADMIN, ENTONCES TENDRA ACCESO A TODO
-        if(USER.role.name == 'Super-Admin'){
+        if(USER.role && USER.role.name == 'Super-Admin'){
           navItemsV.value.push(nav);
         }else{
           // LOS NAV QUE TENGAN EL PERMISO ALL PUEDEN SER VISTO POR CUALQUIER USUARIO

@@ -88,7 +88,7 @@ const logout = async() => {
                   {{ user.full_name }}
                 </div>
                 <div class="text-capitalize text-caption text-disabled">
-                  {{ user.role.name }}
+                  {{ user.role ? user.role.name : 'Sin rol' }}
                 </div>
               </div>
             </div>

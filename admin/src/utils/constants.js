@@ -162,57 +162,56 @@ export const PERMISOS = [
             },
         ]
     },
-    {
-        'name': 'Transporte',
-        'permisos': [
-            {
-                name: 'Registrar',
-                permiso: 'register_transport',
-            },
-            {
-                name: 'Listado',
-                permiso: 'list_transport',
-            },
-            {
-                name: 'Editar',
-                permiso: 'edit_transport',
-            },
-            {
-                name: 'Eliminar',
-                permiso: 'delete_transport',
-            },
-        ]
-    },
-    {
-        'name': 'Conversiones',
-        'permisos': [
-            {
-                name: 'Disponible',
-                permiso: 'conversions',
-            },
-        ]
-    },
-    {
-        'name': 'Kardex',
-        'permisos': [
-            {
-                name: 'Disponible',
-                permiso: 'kardex',
-            },
-        ]
-    },
+    // {
+    //     'name': 'Transporte',
+    //     'permisos': [
+    //         {
+    //             name: 'Registrar',
+    //             permiso: 'register_transport',
+    //         },
+    //         {
+    //             name: 'Listado',
+    //             permiso: 'list_transport',
+    //         },
+    //         {
+    //             name: 'Editar',
+    //             permiso: 'edit_transport',
+    //         },
+    //         {
+    //             name: 'Eliminar',
+    //             permiso: 'delete_transport',
+    //         },
+    //     ]
+    // },
+    // {
+    //     'name': 'Conversiones',
+    //     'permisos': [
+    //         {
+    //             name: 'Disponible',
+    //             permiso: 'conversions',
+    //         },
+    //     ]
+    // },
+    // {
+    //     'name': 'Kardex',
+    //     'permisos': [
+    //         {
+    //             name: 'Disponible',
+    //             permiso: 'kardex',
+    //         },
+    //     ]
+    // },
 ];
 
 export function isPermission(permission) {
     let USER = localStorage.getItem("user") ? JSON.parse(localStorage.getItem('user')) : null;
-    if(USER){
-        if(USER.role.name == 'Super-Admin'){
+    if (USER) {
+        if (USER.role && USER.role.name == 'Super-Admin') {
             return true;
         }
-        if(USER.permissions.includes(permission)){
+        if (USER.permissions && USER.permissions.includes(permission)) {
             return true;
         }
     }
     return false;
 }
-  

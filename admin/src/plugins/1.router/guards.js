@@ -29,7 +29,7 @@ export const setupGuards = router => {
     }
     console.log(to.meta);
     let USER = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
-    if(USER && USER.role.name != 'Super-Admin'){
+    if(USER && (!USER.role || USER.role.name != 'Super-Admin')){
      //LISTA DE PERMISOS DEL USUARIO AUTENTICADO
      let permissions = USER.permissions;
      console.log(permissions);

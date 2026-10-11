@@ -200,7 +200,7 @@
                 </template>
 
                 <template #item.role="{ item }">
-                    <span class="text-h6">{{ item.role.name }}</span>
+                    <span class="text-h6">{{ item.role ? item.role.name : 'Sin rol' }}</span>
                 </template>
                 <template #item.sucursale="{ item }">
                     <span class="text-h6">{{ item.sucursale.name }}</span>
