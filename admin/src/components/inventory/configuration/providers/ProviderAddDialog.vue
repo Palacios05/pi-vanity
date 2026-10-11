@@ -41,7 +41,7 @@ const store = async() => {
   }
   if(!ruc.value){
     setTimeout(() => {
-      warning.value = "Se debe llenar el ruc del proveedor";
+      warning.value = "Se debe llenar el NIT del proveedor";
     }, 50);
     return;
   }

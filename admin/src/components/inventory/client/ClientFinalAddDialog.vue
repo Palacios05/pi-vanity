@@ -79,19 +79,19 @@ const store = async() => {
   }
   if(!ubigeo_region.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar una región para el cliente";
+      warning.value = "Se debe seleccionar un departamento para el cliente";
     }, 50);
     return;
   }
   if(!ubigeo_provincia.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar una provincia para el cliente";
+      warning.value = "Se debe seleccionar un municipio para el cliente";
     }, 50);
     return;
   }
   if(!ubigeo_distrito.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar un distrito para el cliente";
+      warning.value = "Se debe seleccionar un barrio para el cliente";
     }, 50);
     return;
   }
@@ -382,7 +382,7 @@ const dialogVisibleUpdate = val => {
                     v-model="ubigeo_provincia"
                     item-title="name"
                     item-value="id"
-                    label="Provincia"
+                    label="Municipio"
                     placeholder="Select Item"
                     eager
                 />
@@ -395,7 +395,7 @@ const dialogVisibleUpdate = val => {
                     v-model="ubigeo_distrito"
                     item-title="name"
                     item-value="id"
-                    label="Distrito"
+                    label="Barrio"
                     placeholder="Select Item"
                     eager
                 />

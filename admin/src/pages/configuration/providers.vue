@@ -9,7 +9,7 @@
             key: 'full_name',
         },
         {
-            title: 'RUC',
+            title: 'NIT',
             key: 'ruc',
         },
         {
