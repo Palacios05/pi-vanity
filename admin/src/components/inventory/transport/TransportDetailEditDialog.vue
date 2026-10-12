@@ -139,7 +139,7 @@ onMounted(() => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Edit Transport Detail : {{ props.transportDetailSelected.id }}
+            Editar detalle de transporte: {{ props.transportDetailSelected.id }}
           </h4>
         </div>
 

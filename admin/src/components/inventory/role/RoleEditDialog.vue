@@ -116,7 +116,7 @@ const dialogVisibleUpdate = val => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Edit Role : {{ props.roleSelected.id }}
+            Editar rol: {{ props.roleSelected.id }}
           </h4>
         </div>
 

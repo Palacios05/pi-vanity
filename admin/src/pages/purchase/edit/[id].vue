@@ -331,7 +331,7 @@
         <div class="d-flex flex-wrap justify-space-between gap-4 mb-6">
             <div class="d-flex flex-column justify-center">
                 <h4 class="text-h4 mb-1">
-                    🗃️ Edit Purchase : #{{ route.params.id }}
+                    🗃️ Editar compra : #{{ route.params.id }}
                 </h4>
                 <p class="text-body-1 mb-0">
                 Orders placed across your store

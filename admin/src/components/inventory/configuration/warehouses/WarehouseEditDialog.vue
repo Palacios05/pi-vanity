@@ -119,7 +119,7 @@ onMounted(() => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Edit Warehouse : {{ props.warehouseSelected.name }}
+            Editar almacén: {{ props.warehouseSelected.name }}
           </h4>
         </div>
 

@@ -467,7 +467,7 @@ definePage({ meta: { permission: 'edit_product', } });
     <div class="d-flex flex-wrap justify-space-between gap-4 mb-6">
       <div class="d-flex flex-column justify-center">
         <h4 class="text-h4 mb-1">
-          💻 Edit Product : {{ route.params.id }}
+          💻 Editar producto : {{ route.params.id }}
         </h4>
         <p class="text-body-1 mb-0">
           Orders placed across your update
@@ -656,7 +656,7 @@ definePage({ meta: { permission: 'edit_product', } });
                                 block
                                 @click.stop="fileData.splice(index, 1)"
                               >
-                                Remove
+                                Quitar
                               </VBtn>
                             </VCardActions>
                           </VCard>

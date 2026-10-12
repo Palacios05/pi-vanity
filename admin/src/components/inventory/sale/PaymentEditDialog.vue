@@ -99,7 +99,7 @@ onMounted(() => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Edit Payment : {{ props.paymentSelected.method_payment }}
+            Editar pago: {{ props.paymentSelected.method_payment }}
           </h4>
         </div>
 

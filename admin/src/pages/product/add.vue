@@ -540,7 +540,7 @@ definePage({ meta: { permission: 'register_product', } });
                                 block
                                 @click.stop="fileData.splice(index, 1)"
                               >
-                                Remove File
+                                Quitar archivo
                               </VBtn>
                             </VCardActions>
                           </VCard>

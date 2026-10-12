@@ -73,7 +73,7 @@ const dialogVisibleUpdate = val => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Delete Client : {{ props.clientSelected.full_name }}
+            Eliminar cliente: {{ props.clientSelected.full_name }}
           </h4>
         </div>
 

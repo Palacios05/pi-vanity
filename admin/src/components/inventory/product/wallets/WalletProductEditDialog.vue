@@ -139,7 +139,7 @@ onMounted(() => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Edit Wallet Product : {{ props.walletSelected.id }}
+            Editar precio del producto: {{ props.walletSelected.id }}
           </h4>
         </div>
 

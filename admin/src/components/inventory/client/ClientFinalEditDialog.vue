@@ -220,7 +220,7 @@ const dialogVisibleUpdate = val => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Edit Client Final : {{ props.clientSelected.id }}
+            Editar cliente final: {{ props.clientSelected.id }}
           </h4>
         </div>
 
