@@ -5,14 +5,8 @@
       &copy;
       {{ new Date().getFullYear() }},
       Vanity And Magic
-      <VIcon
-        icon="ri-heart-fill"
-        color="error"
-        size="1.25rem"
-        class="mx-1"
-      />
       By
-      JJ, Knabal & Yeyo
+      Smart Inventory
     </div>
     <!-- 👉 Footer: right content -->
     <span class="d-md-flex gap-x-4 text-primary d-none">
