@@ -1,1 +1,16 @@
 // Write your overrides
+
+// Botones: que el texto largo (en español) no se desborde
+.v-btn {
+  white-space: nowrap;
+  min-inline-size: fit-content;
+  padding-inline: 16px;
+}
+
+// Columnas con botones: si no caben, que bajen a otra línea
+.v-col.text-end {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}

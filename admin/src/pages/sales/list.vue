@@ -282,7 +282,7 @@
                             </VCol>
                         </VRow>
                     </VCol>
-                    <VCol cols="2" class="text-end">
+                    <VCol cols="12" md="4" class="text-end">
                         <VBtn v-if="isPermission('register_sale')" @click="router.push({name: 'sales-add'})">
                             Agregar venta
                             <VIcon

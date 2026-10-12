@@ -112,7 +112,7 @@
                             @keyup.enter="list"
                         />
                     </VCol>
-                    <VCol cols="2" class="text-end">
+                    <VCol cols="12" md="4" class="text-end">
                         <VBtn v-if="isPermission('register_role')" @click="isRoleAddDialogVisible = !isRoleAddDialogVisible">
                             Agregar rol
                             <VIcon

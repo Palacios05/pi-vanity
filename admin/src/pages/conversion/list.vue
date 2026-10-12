@@ -199,7 +199,7 @@
                             </VCol>
                         </VRow>
                     </VCol>
-                    <VCol cols="2" class="text-end">
+                    <VCol cols="12" md="4" class="text-end">
                         <VBtn @click="openCreateConversion()">
                             Agregar conversión
                             <VIcon
