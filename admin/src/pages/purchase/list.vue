@@ -243,7 +243,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn v-if="isPermission('register_purchase')" @click="router.push({name: 'purchase-add'})">
-                            Add Purchase
+                            Agregar compra
                             <VIcon
                                 end
                                 icon="ri-add-line"

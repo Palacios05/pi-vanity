@@ -38,7 +38,7 @@ definePage({
         to="/"
         class="mt-10"
       >
-        Back to Home
+        Volver al inicio
       </VBtn>
 
       <VImg

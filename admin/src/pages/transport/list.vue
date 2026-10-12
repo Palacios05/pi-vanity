@@ -209,7 +209,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn v-if="isPermission('register_transport')" @click="router.push({name: 'transport-add'})">
-                            Add Transport
+                            Agregar transporte
                             <VIcon
                                 end
                                 icon="ri-add-line"

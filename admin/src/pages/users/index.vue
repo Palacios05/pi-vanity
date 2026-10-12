@@ -157,7 +157,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="isUserAddDialogVisible = !isUserAddDialogVisible">
-                            Add User
+                            Agregar usuario
                             <VIcon
                                 end
                                 icon="ri-add-line"

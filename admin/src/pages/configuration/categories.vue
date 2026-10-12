@@ -113,7 +113,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="isCategorieAddDialogVisible = !isCategorieAddDialogVisible">
-                            Add Categorie
+                            Agregar categoría
                             <VIcon
                                 end
                                 icon="ri-add-line"

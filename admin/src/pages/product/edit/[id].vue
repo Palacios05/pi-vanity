@@ -580,7 +580,7 @@ definePage({ meta: { permission: 'edit_product', } });
             </template>
             <template #append>
               <h6 class="text-h6 text-primary cursor-pointer">
-                Add Media from URL
+                Agregar imagen desde URL
               </h6>
             </template>
           </VCardItem>

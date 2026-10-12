@@ -159,7 +159,7 @@
                         <VRow>
                             <VCol cols="6" class="text-end">
                                 <VBtn  v-if="isPermission('register_client')" @click="isClientFinalAddDialogVisible = !isClientFinalAddDialogVisible">
-                                    Add Client Final
+                                    Agregar cliente final
                                     <VIcon
                                         end
                                         icon="ri-add-line"
@@ -168,7 +168,7 @@
                             </VCol>
                             <VCol cols="6" class="text-end">
                                 <VBtn  v-if="isPermission('register_client')" @click="isClientCompanyAddDialogVisible = !isClientCompanyAddDialogVisible">
-                                    Add Client Company
+                                    Agregar cliente empresa
                                     <VIcon
                                         end
                                         icon="ri-add-line"

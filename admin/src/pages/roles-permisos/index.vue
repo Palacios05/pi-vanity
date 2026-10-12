@@ -114,7 +114,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn v-if="isPermission('register_role')" @click="isRoleAddDialogVisible = !isRoleAddDialogVisible">
-                            Add Role
+                            Agregar rol
                             <VIcon
                                 end
                                 icon="ri-add-line"

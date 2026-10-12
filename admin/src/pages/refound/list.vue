@@ -271,7 +271,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="openCreateRefound()">
-                            Add Refound
+                            Agregar devolución
                             <VIcon
                                 end
                                 icon="ri-add-line"

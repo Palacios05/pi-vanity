@@ -122,7 +122,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="isUnitAddDialogVisible = !isUnitAddDialogVisible">
-                            Add Unit
+                            Agregar unidad
                             <VIcon
                                 end
                                 icon="ri-add-line"

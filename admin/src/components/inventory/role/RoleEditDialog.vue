@@ -226,7 +226,7 @@ const dialogVisibleUpdate = val => {
                 variant="outlined"
                 @click="onFormReset"
               >
-                Cancel
+                Cancelar
               </VBtn>
             </VCol>
           </VRow>

@@ -201,7 +201,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="openCreateConversion()">
-                            Add Conversion
+                            Agregar conversión
                             <VIcon
                                 end
                                 icon="ri-add-line"

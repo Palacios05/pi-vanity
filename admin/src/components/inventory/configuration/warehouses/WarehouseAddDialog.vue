@@ -110,7 +110,7 @@ const dialogVisibleUpdate = val => {
       <VCardText class="pt-5">
         <div class="text-center pb-6">
           <h4 class="text-h4 mb-2">
-            Add Warehouse
+            Agregar almacén
           </h4>
         </div>
 
@@ -204,7 +204,7 @@ const dialogVisibleUpdate = val => {
                 variant="outlined"
                 @click="onFormReset"
               >
-                Cancel
+                Cancelar
               </VBtn>
             </VCol>
           </VRow>

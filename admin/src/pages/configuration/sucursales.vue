@@ -114,7 +114,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="isSucursalAddDialogVisible = !isSucursalAddDialogVisible">
-                            Add Sucursal
+                            Agregar sucursal
                             <VIcon
                                 end
                                 icon="ri-add-line"

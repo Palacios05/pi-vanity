@@ -308,7 +308,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn v-if="isPermission('register_product')" @click="router.push({name: 'product-add'})">
-                            Add Product
+                            Agregar producto
                             <VIcon
                                 end
                                 icon="ri-add-line"

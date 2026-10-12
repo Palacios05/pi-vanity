@@ -284,7 +284,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn v-if="isPermission('register_sale')" @click="router.push({name: 'sales-add'})">
-                            Add Sale
+                            Agregar venta
                             <VIcon
                                 end
                                 icon="ri-add-line"

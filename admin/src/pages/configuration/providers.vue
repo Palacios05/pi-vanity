@@ -134,7 +134,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="isProviderAddDialogVisible = !isProviderAddDialogVisible">
-                            Add Providers
+                            Agregar proveedor
                             <VIcon
                                 end
                                 icon="ri-add-line"
