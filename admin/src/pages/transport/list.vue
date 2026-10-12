@@ -120,7 +120,7 @@
                         <VRow>
                             <VCol cols="3">
                                 <VTextField
-                                    placeholder="Search N° Transport"
+                                    placeholder="Buscar N° de transporte"
                                     density="compact"
                                     class="me-3"
                                     v-model="searchQuery"
@@ -132,7 +132,7 @@
                                     :items="warehouses"
                                     item-title="name"
                                     item-value="id"
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     v-model="warehouse_start_id"
                                     label="Almacen de atención"
                                 />
@@ -142,7 +142,7 @@
                                     :items="warehouses"
                                     item-title="name"
                                     item-value="id"
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     v-model="warehouse_end_id"
                                     label="Almacenen de entrega"
                                 />
@@ -153,7 +153,7 @@
                                 :items="units"
                                 item-title="name"
                                 item-value="id"
-                                placeholder="Select"
+                                placeholder="Seleccionar"
                                 v-model="unit_id"
                                 label="Unidades"
                                 />
@@ -164,13 +164,13 @@
                                 <AppDateTimePicker
                                     v-model="range_date"
                                     label="Rango de fecha"
-                                    placeholder="Select date"
+                                    placeholder="Seleccionar fecha"
                                     :config="{ mode: 'range' }"
                                 />
                             </VCol>
                             <VCol cols="3">
                                 <VTextField
-                                    placeholder="Search Product"
+                                    placeholder="Buscar producto"
                                     density="compact"
                                     class="me-3"
                                     v-model="search_product"

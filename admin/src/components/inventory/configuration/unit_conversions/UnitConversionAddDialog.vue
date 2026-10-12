@@ -150,7 +150,7 @@ onMounted(() => {
                     item-value="id"
                     v-model="unit_to_id"
                     label="Unidades"
-                    placeholder="Select Item"
+                    placeholder="Seleccionar"
                     eager
                 />
             </VCol>

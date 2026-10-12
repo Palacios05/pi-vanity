@@ -113,7 +113,7 @@
                         <VRow>
                             <VCol cols="3">
                                 <VTextField
-                                    placeholder="Search N° Registro"
+                                    placeholder="Buscar N° de registro"
                                     density="compact"
                                     class="me-3"
                                     v-model="conversion_id"
@@ -122,7 +122,7 @@
                             </VCol>
                             <VCol cols="3">
                                 <VTextField
-                                    placeholder="Search Product"
+                                    placeholder="Buscar producto"
                                     density="compact"
                                     class="me-3"
                                     v-model="searchQuery"
@@ -134,7 +134,7 @@
                                     :items="warehouses"
                                     item-title="name"
                                     item-value="id"
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     v-model="warehouse_id"
                                     label="Almacenes"
                                 />
@@ -144,7 +144,7 @@
                                 :items="units"
                                 item-title="name"
                                 item-value="id"
-                                placeholder="Select"
+                                placeholder="Seleccionar"
                                 v-model="unit_start_id"
                                 label="Unidad inicial"
                                 />
@@ -154,7 +154,7 @@
                                 :items="units"
                                 item-title="name"
                                 item-value="id"
-                                placeholder="Select"
+                                placeholder="Seleccionar"
                                 v-model="unit_end_id"
                                 label="Unidad final"
                                 />
@@ -165,7 +165,7 @@
                                 <AppDateTimePicker
                                     v-model="range_date"
                                     label="Rango de fecha"
-                                    placeholder="Select date"
+                                    placeholder="Seleccionar fecha"
                                     :config="{ mode: 'range' }"
                                 />
                             </VCol>

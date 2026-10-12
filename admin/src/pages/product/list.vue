@@ -162,7 +162,7 @@
                         <VRow>
                             <VCol cols="3">
                                 <VTextField
-                                    placeholder="Search Product"
+                                    placeholder="Buscar producto"
                                     density="compact"
                                     class="me-3"
                                     v-model="searchQuery"
@@ -171,7 +171,7 @@
                             </VCol>
                             <VCol cols="3">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Categoria"
                                     :items="categories"
                                     item-title="name"
@@ -185,7 +185,7 @@
                                     :items="warehouses"
                                     item-title="name"
                                     item-value="id"
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     v-model="warehouse_stock_id"
                                     label="Almacenes"
                                 />
@@ -195,7 +195,7 @@
                                 :items="units"
                                 item-title="name"
                                 item-value="id"
-                                placeholder="Select"
+                                placeholder="Seleccionar"
                                 v-model="unit_stock_id"
                                 label="Unidades"
                                 />
@@ -205,14 +205,14 @@
                                     :items="sucursales"
                                     item-title="name"
                                     item-value="id"
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Sucursales"
                                     v-model="sucursale_price_id"
                                 />
                             </VCol>
                             <VCol cols="3">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Disponibilidad"
                                     :items="[
                                     {

@@ -158,7 +158,7 @@ onMounted(() => {
                 :items="units"
                 item-title="name"
                 item-value="id"
-                placeholder="Select"
+                placeholder="Seleccionar"
                 v-model="unit_id"
                 label="Unidades"
                 :disabled="props.transportDetailSelected.state != 1 ? true : false"

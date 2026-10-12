@@ -271,7 +271,7 @@
                                     v-model="warehouse_id"
                                     :items="warehouses"
                                     label="Almacenes"
-                                    placeholder="Select Almacen"
+                                    placeholder="Seleccionar almacén"
                                     item-title="name"
                                     item-value="id"
                                     eager
@@ -282,7 +282,7 @@
                                     v-model="provider_id"
                                     :items="providers"
                                     label="Proveedores"
-                                    placeholder="Select Proveedor"
+                                    placeholder="Seleccionar proveedor"
                                     item-title="full_name"
                                     item-value="id"
                                     eager
@@ -293,7 +293,7 @@
                             <VCol cols="3">
                                 <AppDateTimePicker
                                     label="Fecha de emisión"
-                                    placeholder="Select date"
+                                    placeholder="Seleccionar fecha"
                                     v-model="date_emision"
                                 />
                             </VCol>
@@ -308,7 +308,7 @@
                                     ]"
                                     v-model="type_comprobant"
                                     label="Tipo de Comprobantes"
-                                    placeholder="Select Tipo"
+                                    placeholder="Seleccionar tipo"
                                     eager
                                 />
                             </VCol>
@@ -367,7 +367,7 @@
                                             item-title="title"
                                             item-value="id"
                                             return-object
-                                            placeholder="Search for a product"
+                                            placeholder="Buscar un producto"
                                             label="¿Que agregamos?"
                                             variant="underlined"
                                             :menu-props="{ maxHeight: '200px' }"
@@ -395,7 +395,7 @@
                                                     :items="units"
                                                     item-title="name"
                                                     item-value="id"
-                                                    placeholder="Select"
+                                                    placeholder="Seleccionar"
                                                     v-model="unit_id"
                                                     label="Unidades"
                                                 />

@@ -105,7 +105,7 @@
                 <VRow class="justify-space-between">
                     <VCol cols="3">
                         <VTextField
-                            placeholder="Search Sucursal"
+                            placeholder="Buscar sucursal"
                             density="compact"
                             class="me-3"
                             v-model="searchQuery"

@@ -263,7 +263,7 @@ onMounted(() => {
                     :items="warehouses"
                     item-title="name"
                     item-value="id"
-                    placeholder="Select"
+                    placeholder="Seleccionar"
                     v-model="warehouse_id"
                     label="Almacenes"
                 />
@@ -283,7 +283,7 @@ onMounted(() => {
                                     item-title="title"
                                     item-value="id"
                                     return-object
-                                    placeholder="Search for a product"
+                                    placeholder="Buscar un producto"
                                     label="¿Que agregamos?"
                                     variant="underlined"
                                     :menu-props="{ maxHeight: '200px' }"
@@ -309,7 +309,7 @@ onMounted(() => {
                                             :items="units"
                                             item-title="name"
                                             item-value="id"
-                                            placeholder="Select"
+                                            placeholder="Seleccionar"
                                             v-model="unit_start_id"
                                             label="Unidad de inicio"
                                         />
@@ -332,7 +332,7 @@ onMounted(() => {
                                             :items="unit_conversions"
                                             item-title="name"
                                             item-value="id"
-                                            placeholder="Select"
+                                            placeholder="Seleccionar"
                                             v-model="unit_end_id"
                                             label="Unidad a convertir"
                                         />

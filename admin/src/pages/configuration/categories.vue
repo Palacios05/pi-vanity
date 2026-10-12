@@ -104,7 +104,7 @@
                 <VRow class="justify-space-between">
                     <VCol cols="3">
                         <VTextField
-                            placeholder="Search Categorie"
+                            placeholder="Buscar categoría"
                             density="compact"
                             class="me-3"
                             v-model="searchQuery"

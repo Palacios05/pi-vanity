@@ -160,7 +160,7 @@
                             <VCol cols="2">
                                 <VSelect
                                 :items="year_list"
-                                placeholder="Select"
+                                placeholder="Seleccionar"
                                 v-model="year_selected"
                                 label="Año"
                                 />
@@ -171,7 +171,7 @@
                                 :items="month_list"
                                 item-title="name"
                                 item-value="id"
-                                placeholder="Select"
+                                placeholder="Seleccionar"
                                 v-model="month_selected"
                                 label="Mes"
                                 />
@@ -182,7 +182,7 @@
                                     :items="warehouses"
                                     item-title="name"
                                     item-value="id"
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     v-model="warehouse_id"
                                     label="Almacenes"
                                 />
@@ -199,7 +199,7 @@
                                             item-title="title"
                                             item-value="id"
                                             return-object
-                                            placeholder="Search for a product"
+                                            placeholder="Buscar un producto"
                                             label="¿Que agregamos?"
                                             variant="underlined"
                                             :menu-props="{ maxHeight: '200px' }"

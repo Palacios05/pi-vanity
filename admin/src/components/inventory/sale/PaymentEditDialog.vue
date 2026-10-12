@@ -123,7 +123,7 @@ onMounted(() => {
                   ]"
                   v-model="method_payment"
                   label="Metodo de Pago"
-                  placeholder="Select Item"
+                  placeholder="Seleccionar"
                   eager
               />
             </VCol>

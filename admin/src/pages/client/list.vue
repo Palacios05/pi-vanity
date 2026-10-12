@@ -148,34 +148,28 @@
                 <VRow class="justify-space-between">
                     <VCol cols="3">
                         <VTextField
-                            placeholder="Search Clients"
+                            placeholder="Buscar Clientes"
                             density="compact"
                             class="me-3"
                             v-model="searchQuery"
                             @keyup.enter="list"
                         />
                     </VCol>
-                    <VCol cols="4">
-                        <VRow>
-                            <VCol cols="6" class="text-end">
-                                <VBtn  v-if="isPermission('register_client')" @click="isClientFinalAddDialogVisible = !isClientFinalAddDialogVisible">
-                                    Agregar cliente final
-                                    <VIcon
-                                        end
-                                        icon="ri-add-line"
-                                    />
-                                </VBtn>
-                            </VCol>
-                            <VCol cols="6" class="text-end">
-                                <VBtn  v-if="isPermission('register_client')" @click="isClientCompanyAddDialogVisible = !isClientCompanyAddDialogVisible">
-                                    Agregar cliente empresa
-                                    <VIcon
-                                        end
-                                        icon="ri-add-line"
-                                    />
-                                </VBtn>
-                            </VCol>
-                        </VRow>
+                    <VCol cols="12" md="8" class="d-flex justify-end flex-wrap gap-2">
+                        <VBtn v-if="isPermission('register_client')" @click="isClientFinalAddDialogVisible = !isClientFinalAddDialogVisible">
+                            Agregar cliente final
+                            <VIcon
+                                end
+                                icon="ri-add-line"
+                            />
+                        </VBtn>
+                        <VBtn v-if="isPermission('register_client')" @click="isClientCompanyAddDialogVisible = !isClientCompanyAddDialogVisible">
+                            Agregar cliente empresa
+                            <VIcon
+                                end
+                                icon="ri-add-line"
+                            />
+                        </VBtn>
                     </VCol>
                 </VRow>
             </VCardText>

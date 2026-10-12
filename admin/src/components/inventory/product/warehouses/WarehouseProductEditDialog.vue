@@ -156,7 +156,7 @@ onMounted(() => {
                 :items="warehouses"
                 item-title="name"
                 item-value="id"
-                placeholder="Select"
+                placeholder="Seleccionar"
                 v-model="warehouse_id"
                 label="Almacenes"
               />
@@ -169,7 +169,7 @@ onMounted(() => {
                 :items="units"
                 item-title="name"
                 item-value="id"
-                placeholder="Select"
+                placeholder="Seleccionar"
                 v-model="unit_id"
                 label="Unidades"
              />

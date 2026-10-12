@@ -138,7 +138,7 @@
                         <VRow>
                             <VCol cols="3">
                                 <VTextField
-                                    placeholder="Search N° Purchase"
+                                    placeholder="Buscar N° de compra"
                                     density="compact"
                                     class="me-3"
                                     v-model="searchQuery"
@@ -150,7 +150,7 @@
                                     :items="warehouses"
                                     item-title="name"
                                     item-value="id"
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     v-model="warehouse_id"
                                     label="Almacenes"
                                 />
@@ -160,7 +160,7 @@
                                 :items="units"
                                 item-title="name"
                                 item-value="id"
-                                placeholder="Select"
+                                placeholder="Seleccionar"
                                 v-model="unit_id"
                                 label="Unidades"
                                 />
@@ -168,7 +168,7 @@
 
                             <VCol cols="3">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Proveedor"
                                     :items="providers"
                                     item-title="full_name"
@@ -190,7 +190,7 @@
                                     ]"
                                     v-model="type_comprobant"
                                     label="Tipo de Comprobantes"
-                                    placeholder="Select Tipo"
+                                    placeholder="Seleccionar tipo"
                                     eager
                                 />
                             </VCol>
@@ -198,13 +198,13 @@
                                 <AppDateTimePicker
                                     v-model="range_date"
                                     label="Rango de fecha"
-                                    placeholder="Select date"
+                                    placeholder="Seleccionar fecha"
                                     :config="{ mode: 'range' }"
                                 />
                             </VCol>
                             <VCol cols="3">
                                 <VTextField
-                                    placeholder="Search Product"
+                                    placeholder="Buscar producto"
                                     density="compact"
                                     class="me-3"
                                     v-model="search_product"

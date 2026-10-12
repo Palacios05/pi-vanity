@@ -288,7 +288,7 @@ onMounted(() => {
               cols="4"
             >
                 <VSelect
-                    placeholder="Select"
+                    placeholder="Seleccionar"
                     label="Tipo"
                     :items="[
                     {

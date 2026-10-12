@@ -256,7 +256,7 @@ const dialogVisibleUpdate = val => {
 ]"
                     v-model="type_document"
                     label="Tipo de documento"
-                    placeholder="Select Item"
+                    placeholder="Seleccionar"
                     eager
                 />
             </VCol>
@@ -281,7 +281,7 @@ const dialogVisibleUpdate = val => {
                     item-value="id"
                     v-model="role_id"
                     label="Rol"
-                    placeholder="Select Item"
+                    placeholder="Seleccionar"
                     eager
                 />
             </VCol>
@@ -295,7 +295,7 @@ const dialogVisibleUpdate = val => {
                     item-value="id"
                     v-model="sucursale_id"
                     label="Sucursal"
-                    placeholder="Select Item"
+                    placeholder="Seleccionar"
                     eager
                 />
             </VCol>

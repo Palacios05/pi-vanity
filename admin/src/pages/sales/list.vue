@@ -162,7 +162,7 @@
                             
                             <VCol cols="3">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Tipo de cliente"
                                     :items="[
                                     {
@@ -184,7 +184,7 @@
                             <VCol cols="3">
                                 <VTextField
                                     label="Cliente"
-                                    placeholder="Search"
+                                    placeholder="Buscar"
                                     class="me-3"
                                     v-model="search_client"
                                     @keyup.enter="list"
@@ -195,14 +195,14 @@
                                 <AppDateTimePicker
                                     v-model="range_date"
                                     label="Rango de fecha"
-                                    placeholder="Select date"
+                                    placeholder="Seleccionar fecha"
                                     :config="{ mode: 'range' }"
                                 />
                             </VCol>
 
                             <VCol cols="2">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Tipo"
                                     :items="[
                                     {
@@ -223,7 +223,7 @@
 
                             <VCol cols="3">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Estado de entrega"
                                     :items="[
                                     {
@@ -248,7 +248,7 @@
 
                             <VCol cols="3">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Estado de pago"
                                     :items="[
                                     {
@@ -274,7 +274,7 @@
                             <VCol cols="4">
                                 <VTextField
                                     label="Producto"
-                                    placeholder="Search"
+                                    placeholder="Buscar"
                                     class="me-3"
                                     v-model="search_product"
                                     @keyup.enter="list"

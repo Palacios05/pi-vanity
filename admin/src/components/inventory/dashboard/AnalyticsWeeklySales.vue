@@ -191,7 +191,7 @@ onMounted(() => {
         <VCol cols="6">
           <VSelect
             :items="year_list"
-            placeholder="Select"
+            placeholder="Seleccionar"
             v-model="year_selected"
             label="Año"
           />

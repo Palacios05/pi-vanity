@@ -694,7 +694,7 @@
                         <AppDateTimePicker
                             v-model="date_emision"
                             label="Fecha de Emision"
-                            placeholder="Select date"
+                            placeholder="Seleccionar fecha"
                             disabled
                         />
                     </VCol>
@@ -703,7 +703,7 @@
                             :items="warehouses"
                             item-title="name"
                             item-value="id"
-                            placeholder="Select"
+                            placeholder="Seleccionar"
                             v-model="warehouse_id"
                             label="Almacenes"
                         />
@@ -763,7 +763,7 @@
                                     item-title="title"
                                     item-value="id"
                                     return-object
-                                    placeholder="Search for a product"
+                                    placeholder="Buscar un producto"
                                     label="¿Que agregamos?"
                                     variant="underlined"
                                     :menu-props="{ maxHeight: '200px' }"
@@ -800,7 +800,7 @@
                                             :items="units"
                                             item-title="name"
                                             item-value="id"
-                                            placeholder="Select"
+                                            placeholder="Seleccionar"
                                             v-model="unit_id"
                                             label="Unidades"
                                         />
@@ -1001,7 +1001,7 @@
                         <VRow>
                             <VCol cols="4">
                                 <VSelect
-                                    placeholder="Select"
+                                    placeholder="Seleccionar"
                                     label="Metodos de Pago"
                                     :items="[
                                         'EFECTIVO',

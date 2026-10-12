@@ -113,7 +113,7 @@
                 <VRow class="justify-space-between">
                     <VCol cols="3">
                         <VTextField
-                            placeholder="Search Unit"
+                            placeholder="Buscar unidad"
                             density="compact"
                             class="me-3"
                             v-model="searchQuery"

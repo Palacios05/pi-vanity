@@ -286,7 +286,7 @@
                                     v-model="warehouse_start_id"
                                     :items="warehouses"
                                     label="Almacen de Atención"
-                                    placeholder="Select Almacen"
+                                    placeholder="Seleccionar almacén"
                                     item-title="name"
                                     item-value="id"
                                     eager
@@ -297,7 +297,7 @@
                                     v-model="warehouse_end_id"
                                     :items="warehouses"
                                     label="Almacen de Entrega"
-                                    placeholder="Select Almacen"
+                                    placeholder="Seleccionar almacén"
                                     item-title="name"
                                     item-value="id"
                                     eager
@@ -308,7 +308,7 @@
                             <VCol cols="3">
                                 <AppDateTimePicker
                                     label="Fecha de emisión"
-                                    placeholder="Select date"
+                                    placeholder="Seleccionar fecha"
                                     v-model="date_emision"
                                 />
                             </VCol>
@@ -360,7 +360,7 @@
                                             item-title="title"
                                             item-value="id"
                                             return-object
-                                            placeholder="Search for a product"
+                                            placeholder="Buscar un producto"
                                             label="¿Que agregamos?"
                                             variant="underlined"
                                             :menu-props="{ maxHeight: '200px' }"
@@ -388,7 +388,7 @@
                                                     :items="units"
                                                     item-title="name"
                                                     item-value="id"
-                                                    placeholder="Select"
+                                                    placeholder="Seleccionar"
                                                     v-model="unit_id"
                                                     label="Unidades"
                                                 />

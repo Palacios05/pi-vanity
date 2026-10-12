@@ -158,7 +158,7 @@ onMounted(() => {
                 :items="sucursales"
                 item-title="name"
                 item-value="id"
-                placeholder="Select"
+                placeholder="Seleccionar"
                 v-model="sucursale_id"
                 label="Sucursales"
               />
@@ -171,7 +171,7 @@ onMounted(() => {
                 :items="units"
                 item-title="name"
                 item-value="id"
-                placeholder="Select"
+                placeholder="Seleccionar"
                 v-model="unit_id"
                 label="Unidades"
              />
@@ -193,7 +193,7 @@ onMounted(() => {
                   ]"
                   item-title="name"
                   item-value="id"
-                  placeholder="Select"
+                  placeholder="Seleccionar"
                   label="Tipo de cliente"
                   v-model="type_client"
                 />

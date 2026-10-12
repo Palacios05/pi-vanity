@@ -685,7 +685,7 @@ definePage({ meta: { permission: 'edit_product', } });
                   :items="warehouses"
                   item-title="name"
                   item-value="id"
-                  placeholder="Select"
+                  placeholder="Seleccionar"
                   v-model="warehouse_stock_id"
                   label="Almacenes"
                 />
@@ -698,7 +698,7 @@ definePage({ meta: { permission: 'edit_product', } });
                   :items="units"
                   item-title="name"
                   item-value="id"
-                  placeholder="Select"
+                  placeholder="Seleccionar"
                   v-model="unit_stock_id"
                   label="Unidades"
                 />
@@ -836,7 +836,7 @@ definePage({ meta: { permission: 'edit_product', } });
                   :items="sucursales"
                   item-title="name"
                   item-value="id"
-                  placeholder="Select"
+                  placeholder="Seleccionar"
                   label="Sucursales"
                   v-model="sucursale_price_id"
                 />
@@ -849,7 +849,7 @@ definePage({ meta: { permission: 'edit_product', } });
                   :items="units"
                   item-title="name"
                   item-value="id"
-                  placeholder="Select"
+                  placeholder="Seleccionar"
                   label="Unidades"
                   v-model="unit_price_id"
                 />
@@ -871,7 +871,7 @@ definePage({ meta: { permission: 'edit_product', } });
                   ]"
                   item-title="name"
                   item-value="id"
-                  placeholder="Select"
+                  placeholder="Seleccionar"
                   label="Tipo de cliente"
                   v-model="type_client_price"
                 />
@@ -981,7 +981,7 @@ definePage({ meta: { permission: 'edit_product', } });
           <VCardText>
             <div class="d-flex flex-column gap-y-5">
               <VSelect
-                placeholder="Select"
+                placeholder="Seleccionar"
                 label="Categoria"
                 :items="categories"
                 item-title="name"
@@ -1032,7 +1032,7 @@ definePage({ meta: { permission: 'edit_product', } });
           <VCardText>
             <div class="d-flex flex-column gap-y-5">
               <VSelect
-                placeholder="Select"
+                placeholder="Seleccionar"
                 label="Tipo de Impuesto"
                 :items="[
                   {
@@ -1058,7 +1058,7 @@ definePage({ meta: { permission: 'edit_product', } });
               />
 
               <VSelect
-                placeholder="Select"
+                placeholder="Seleccionar"
                 label="Disponibilidad"
                 :items="[
                   {
@@ -1076,7 +1076,7 @@ definePage({ meta: { permission: 'edit_product', } });
               >
               </VSelect>
               <VSelect
-                placeholder="Select"
+                placeholder="Seleccionar"
                 label="Estado"
                 :items="[
                   {

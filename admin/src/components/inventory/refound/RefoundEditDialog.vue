@@ -116,7 +116,7 @@ onMounted(() => {
               cols="4"
             >
                 <VSelect
-                    placeholder="Select"
+                    placeholder="Seleccionar"
                     label="Tipo"
                     :items="[
                     {
@@ -145,7 +145,7 @@ onMounted(() => {
               v-if="props.selectedRefoundProduct.type == 1"
             >
                 <VSelect
-                    placeholder="Select"
+                    placeholder="Seleccionar"
                     label="Estado"
                     :items="[
                     {
