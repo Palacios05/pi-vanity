@@ -27,10 +27,10 @@ class WarehouseController extends Controller
                     "address" => $warehouse->address,
                     "sucursale_id" => $warehouse->sucursale_id,
                     "sucursal" => [
-                        "id" => $warehouse->sucursal->id,
-                        "name" => $warehouse->sucursal->name,
+                        "id" => $warehouse->sucursal?->id,
+                        "name" => $warehouse->sucursal?->name,
                     ],
-                    "state" => $warehouse->state,
+                    "state" => $warehouse->state ? 1 : 2,
                     "created_at" => $warehouse->created_at->format("Y/m/d h:i:s"),
                 ];
             }),
@@ -58,7 +58,11 @@ class WarehouseController extends Controller
             ]);
         }
         // $request->all() -> name, address y state
-        $warehouse = Warehouse::create($request->all());
+        $data = $request->all();
+        if ($request->has('state')) {
+            $data['state'] = ((int) $request->state) === 1;
+        }
+        $warehouse = Warehouse::create($data);
         
         return response()->json([
             "message" => 200,
@@ -66,11 +70,11 @@ class WarehouseController extends Controller
                 "id" => $warehouse->id,
                 "name" => $warehouse->name,
                 "address" => $warehouse->address,
-                "state" => $warehouse->state,
+                "state" => $warehouse->state ? 1 : 2,
                 "sucursale_id" => $warehouse->sucursale_id,
                 "sucursal" => [
-                    "id" => $warehouse->sucursal->id,
-                    "name" => $warehouse->sucursal->name,
+                    "id" => $warehouse->sucursal?->id,
+                    "name" => $warehouse->sucursal?->name,
                 ],
                 "created_at" => $warehouse->created_at->format("Y/m/d h:i:s"),
             ],
@@ -101,7 +105,11 @@ class WarehouseController extends Controller
         }
         // $request->all() -> name, address y state
         $warehouse = Warehouse::findOrFail($id);
-        $warehouse->update($request->all());
+        $data = $request->all();
+        if ($request->has('state')) {
+            $data['state'] = ((int) $request->state) === 1;
+        }
+        $warehouse->update($data);
 
         return response()->json([
             "message" => 200,
@@ -109,11 +117,11 @@ class WarehouseController extends Controller
                 "id" => $warehouse->id,
                 "name" => $warehouse->name,
                 "address" => $warehouse->address,
-                "state" => $warehouse->state,
+                "state" => $warehouse->state ? 1 : 2,
                 "sucursale_id" => $warehouse->sucursale_id,
                 "sucursal" => [
-                    "id" => $warehouse->sucursal->id,
-                    "name" => $warehouse->sucursal->name,
+                    "id" => $warehouse->sucursal?->id,
+                    "name" => $warehouse->sucursal?->name,
                 ],
                 "created_at" => $warehouse->created_at->format("Y/m/d h:i:s"),
             ],

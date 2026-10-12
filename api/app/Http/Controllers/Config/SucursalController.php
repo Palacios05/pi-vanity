@@ -23,7 +23,7 @@ class SucursalController extends Controller
                     "id" => $sucursal->id,
                     "name" => $sucursal->name,
                     "address" => $sucursal->address,
-                    "state" => $sucursal->state,
+                    "state" => $sucursal->state ? 1 : 2,
                     "created_at" => $sucursal->created_at->format("Y/m/d h:i:s"),
                 ];
             })
@@ -45,7 +45,7 @@ class SucursalController extends Controller
             ]);
         }
         // $request->all() -> name, address y state
-        $sucursal = Sucursale::create($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $sucursal = Sucursale::create($data);
         
         return response()->json([
             "message" => 200,
@@ -53,7 +53,7 @@ class SucursalController extends Controller
                 "id" => $sucursal->id,
                 "name" => $sucursal->name,
                 "address" => $sucursal->address,
-                "state" => $sucursal->state,
+                "state" => $sucursal->state ? 1 : 2,
                 "created_at" => $sucursal->created_at->format("Y/m/d h:i:s"),
             ],
         ]);
@@ -83,7 +83,7 @@ class SucursalController extends Controller
         }
         // $request->all() -> name, address y state
         $sucursal = Sucursale::findOrFail($id);
-        $sucursal->update($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $sucursal->update($data);
 
         return response()->json([
             "message" => 200,
@@ -91,7 +91,7 @@ class SucursalController extends Controller
                 "id" => $sucursal->id,
                 "name" => $sucursal->name,
                 "address" => $sucursal->address,
-                "state" => $sucursal->state,
+                "state" => $sucursal->state ? 1 : 2,
                 "created_at" => $sucursal->created_at->format("Y/m/d h:i:s"),
             ],
         ]);

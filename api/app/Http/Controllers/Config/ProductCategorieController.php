@@ -23,7 +23,7 @@ class ProductCategorieController extends Controller
                 return [
                     "id" => $categorie->id,
                     "title" => $categorie->title,
-                    "state" => (int) $categorie->state,
+                    "state" => $categorie->state ? 1 : 2,
                     "imagen" => $categorie->imagen ? url('storage/' . $categorie->imagen) : NULL,
                     "created_at" => $categorie->created_at->format("Y-m-d h:i A"),
                 ];
@@ -48,14 +48,14 @@ class ProductCategorieController extends Controller
             $path = Storage::putFile("categories",$request->file("image"));
             $request->request->add(["imagen" => $path]);
         }
-        $categorie = ProductCategorie::create($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $categorie = ProductCategorie::create($data);
 
         return response()->json([
             "message" => 200,
             "categorie" => [
                 "id" => $categorie->id,
                 "title" => $categorie->title,
-                "state" => (int) $categorie->state,
+                "state" => $categorie->state ? 1 : 2,
                 "imagen" => $categorie->imagen ? url('storage/' . $categorie->imagen) : NULL,
                 "created_at" => $categorie->created_at->format("Y-m-d h:i A"),
             ],
@@ -90,14 +90,14 @@ class ProductCategorieController extends Controller
             $path = Storage::putFile("categories",$request->file("image"));
             $request->request->add(["imagen" => $path]);
         }
-        $categorie->update($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $categorie->update($data);
 
         return response()->json([
             "message" => 200,
             "categorie" => [
                 "id" => $categorie->id,
                 "title" => $categorie->title,
-                "state" => (int) $categorie->state,
+                "state" => $categorie->state ? 1 : 2,
                 "imagen" => $categorie->imagen ? url('storage/' . $categorie->imagen) : NULL,
                 "created_at" => $categorie->created_at->format("Y-m-d h:i A"),
             ],

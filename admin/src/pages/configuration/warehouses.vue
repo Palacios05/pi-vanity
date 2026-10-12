@@ -114,7 +114,7 @@
                 <VRow class="justify-space-between">
                     <VCol cols="3">
                         <VTextField
-                            placeholder="Search Warehouses"
+                            placeholder="Buscar almacenes"
                             density="compact"
                             class="me-3"
                             v-model="searchQuery"
@@ -123,7 +123,7 @@
                     </VCol>
                     <VCol cols="2" class="text-end">
                         <VBtn @click="isWarehouseAddDialogVisible = !isWarehouseAddDialogVisible">
-                            Add Warehouse
+                            Agregar almacén
                             <VIcon
                                 end
                                 icon="ri-add-line"
@@ -142,7 +142,7 @@
                 <span class="text-h6">{{ item.id }}</span>
                 </template>
                 <template #item.sucursal123="{ item }">
-                <span class="text-h6">{{ item.sucursal.name }}</span>
+                <span class="text-h6">{{ item.sucursal?.name ?? 'Sin Sucursal'}}</span>
                 </template>
                 <template #item.state="{ item }">
                     <VChip color="primary" v-if="item.state == 1">

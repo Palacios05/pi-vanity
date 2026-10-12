@@ -28,7 +28,7 @@ class ProviderController extends Controller
                     "email" => $provider->email,
                     "phone" => $provider->phone,
                     "address" => $provider->address,
-                    "state" => (int) $provider->state,
+                    "state" => $provider->state ? 1 : 2,
                     "imagen" => $provider->imagen ? url('storage/' . $provider->imagen) : NULL,
                     "created_at" => $provider->created_at->format("Y-m-d h:i A"),
                 ];
@@ -53,7 +53,7 @@ class ProviderController extends Controller
             $path = Storage::putFile("providers",$request->file("image"));
             $request->request->add(["imagen" => $path]);
         }
-        $provider = Provider::create($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $provider = Provider::create($data);
 
         return response()->json([
             "message" => 200,
@@ -64,7 +64,7 @@ class ProviderController extends Controller
                 "email" => $provider->email,
                 "phone" => $provider->phone,
                 "address" => $provider->address,
-                "state" => (int) $provider->state,
+                "state" => $provider->state ? 1 : 2,
                 "imagen" => $provider->imagen ? url('storage/' . $provider->imagen) : NULL,
                 "created_at" => $provider->created_at->format("Y-m-d h:i A"),
             ],
@@ -99,7 +99,7 @@ class ProviderController extends Controller
             $path = Storage::putFile("providers",$request->file("image"));
             $request->request->add(["imagen" => $path]);
         }
-        $provider->update($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $provider->update($data);
 
         return response()->json([
             "message" => 200,
@@ -110,7 +110,7 @@ class ProviderController extends Controller
                 "email" => $provider->email,
                 "phone" => $provider->phone,
                 "address" => $provider->address,
-                "state" => (int) $provider->state,
+                "state" => $provider->state ? 1 : 2,
                 "imagen" => $provider->imagen ? url('storage/' . $provider->imagen) : NULL,
                 "created_at" => $provider->created_at->format("Y-m-d h:i A"),
             ],

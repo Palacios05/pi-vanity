@@ -187,8 +187,11 @@ class KpiController extends Controller
                                     ->where("state_sale",1)
                                     ->count();
 
-        $percentage_sale_payment_complete = ($num_sales_payment_total_month_current/$num_sales_month_current) *  100;
-        $percentage_sale_pending = ($num_sales_payment_pending_month_current/$num_sales_month_current) * 100;
+        $percentage_sale_payment_complete = $num_sales_month_current > 0
+            ? ($num_sales_payment_total_month_current / $num_sales_month_current) * 100 : 0;
+        $percentage_sale_pending = $num_sales_month_current > 0
+            ? ($num_sales_payment_pending_month_current / $num_sales_month_current) * 100 : 0;
+
         return response()->json([
             "percentage_sale_pending" => round($percentage_sale_pending,2),
             "percentage_sale_payment_complete" => round($percentage_sale_payment_complete,2),

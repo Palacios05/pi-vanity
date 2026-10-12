@@ -23,7 +23,7 @@ class UnitController extends Controller
                     "id" => $unit->id,
                     "name" => $unit->name,
                     "description" => $unit->description,
-                    "state" => $unit->state,
+                    "state" => $unit->state ? 1 : 2,
                     "created_at" => $unit->created_at->format("Y/m/d h:i:s"),
                 ];
             })
@@ -45,7 +45,7 @@ class UnitController extends Controller
             ]);
         }
         // $request->all() -> name, address y state
-        $unit = Unit::create($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $unit = Unit::create($data);
         
         return response()->json([
             "message" => 200,
@@ -53,7 +53,7 @@ class UnitController extends Controller
                 "id" => $unit->id,
                 "name" => $unit->name,
                 "description" => $unit->description,
-                "state" => $unit->state,
+                "state" => $unit->state ? 1 : 2,
                 "created_at" => $unit->created_at->format("Y/m/d h:i:s"),
             ],
         ]);
@@ -83,7 +83,7 @@ class UnitController extends Controller
         }
         // $request->all() -> name, address y state
         $unit = Unit::findOrFail($id);
-        $unit->update($request->all());
+        $data = $request->all(); if ($request->has("state")) { $data["state"] = ((int) $request->state) === 1; } $unit->update($data);
         
         return response()->json([
             "message" => 200,
@@ -91,7 +91,7 @@ class UnitController extends Controller
                 "id" => $unit->id,
                 "name" => $unit->name,
                 "description" => $unit->description,
-                "state" => $unit->state,
+                "state" => $unit->state ? 1 : 2,
                 "created_at" => $unit->created_at->format("Y/m/d h:i:s"),
             ],
         ]);
