@@ -53,7 +53,7 @@ class SaleController extends Controller
     public function config() 
     {
         $today = now()->format("Y/m/d");
-        $warehouses = Warehouse::where("state",1)->orderBy("id","desc")->get();
+        $warehouses = Warehouse::where("state",true)->orderBy("id","desc")->get();
         return response()->json([
             "today"=> $today,
             "warehouses" => $warehouses->map(function($warehouse) {

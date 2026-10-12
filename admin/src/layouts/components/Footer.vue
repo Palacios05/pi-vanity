@@ -4,9 +4,9 @@
     <div class="d-flex align-center text-base">
       &copy;
       {{ new Date().getFullYear() }},
-      Vanity And Magic
+      Smart Inventory 
       By
-      Smart Inventory
+      Vanity And Magic
     </div>
     <!-- 👉 Footer: right content -->
     <span class="d-md-flex gap-x-4 text-primary d-none">

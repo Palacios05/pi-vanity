@@ -40,9 +40,9 @@ class PurchaseController extends Controller
     }
     
     public function config() {
-        $warehouses = Warehouse::where("state",1)->get();
-        $units = Unit::select("id","name")->where("state",1)->get();
-        $providers = Provider::where("state",1)->get();
+        $warehouses = Warehouse::where("state",true)->get();
+        $units = Unit::select("id","name")->where("state",true)->get();
+        $providers = Provider::where("state",true)->get();
         date_default_timezone_set("America/Lima");
         return response()->json([
             "warehouses" => $warehouses->map(function($warehouse) {

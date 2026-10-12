@@ -49,10 +49,10 @@ class ProductController extends Controller
     }
 
     public function config() {
-        $sucursales = Sucursale::where("state",1)->get();
-        $warehouses = Warehouse::where("state",1)->get();
-        $units = Unit::where("state",1)->get();
-        $categories = ProductCategorie::where("state",1)->get();
+        $sucursales = Sucursale::where("state",true)->get();
+        $warehouses = Warehouse::where("state",true)->get();
+        $units = Unit::where("state",true)->get();
+        $categories = ProductCategorie::where("state",true)->get();
 
         return response()->json([
             "sucursales" => $sucursales->map(function($sucursale) {

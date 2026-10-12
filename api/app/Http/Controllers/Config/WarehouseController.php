@@ -18,7 +18,7 @@ class WarehouseController extends Controller
         //
         $warehouses = Warehouse::where("name","ilike","%".$search."%")->orderBy("id","desc")->get();
 
-        $sucursales = Sucursale::where("state",1)->get();
+        $sucursales = Sucursale::where("state",true)->get();
         return response()->json([
             "warehouses" => $warehouses->map(function($warehouse) {
                 return [
