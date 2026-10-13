@@ -243,42 +243,34 @@ class SaleRefounProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
-        $quantity = $request->quantity;
-        $description = $request->description;
-        $state = $request->state;
-        $description_resolution = $request->description_resolution;
-        
         $refound_product = RefoundProduct::findOrFail($id);
-        if($refound_product->type == 1){
-            $resolution_date = NULL;
-            if($refound_product->resolution_date){
-                $resolution_date = $refound_product->resolution_date;
-            }else{
+
+        $data = [
+            "description" => $request->description,
+        ];
+
+        if($request->has("state")){
+            $data["state"] = $request->state;
+        }
+
+        if($request->has("description_resolution")){
+            $data["description_resolution"] = $request->description_resolution;
+
+            // La fecha de resolución se pone solo la primera vez
+            if(!$refound_product->resolution_date && $request->description_resolution){
                 date_default_timezone_set('America/Lima');
-                if($description_resolution){
-                    $resolution_date = now();
-                }
+                $data["resolution_date"] = now();
             }
-            $refound_product->update([
-                "description" => $description,
-                "quantity" => $quantity,
-                "state" => $state,
-                "description_resolution" => $description_resolution,
-                "resolution_date" => $resolution_date,
-            ]);
         }
-        if($refound_product->type == 2){
-            $refound_product->update([
-                "description" => $description,
-            ]);
+
+        // La cantidad solo se edita en reparaciones (tipo 1),
+        // porque en reemplazo y devolución afecta stock y totales de la venta
+        if($refound_product->type == 1 && $request->has("quantity")){
+            $data["quantity"] = $request->quantity;
         }
-        if($refound_product->type == 3){
-            $refound_product->update([
-                "description" => $description,
-            ]);
-        }
-        
+
+        $refound_product->update($data);
+
         return response()->json([
             "refound_product" => RefoundProductResource::make($refound_product),
         ]);
