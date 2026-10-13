@@ -77,10 +77,10 @@ class Product extends Model
             $query->where("product_categorie_id",$categorie_id);
         }
         if($disponibilidad){
-            $query->where("disponibilidad",$disponibilidad);
+            $query->where("disponibilidad", $disponibilidad == 2);
         }
         if($is_gift){
-            $query->where("is_gift",$is_gift);
+            $query->where("is_gift", $is_gift == 2);
         }
         if($warehouse_id){
             $query->whereHas("warehouses",function($warehouse) use($warehouse_id){

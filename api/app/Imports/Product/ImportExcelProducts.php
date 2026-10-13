@@ -39,7 +39,7 @@ class ImportExcelProducts implements ToModel,WithHeadingRow,WithValidation
         $unit_price = Unit::where("name","ilike",Str::lower($row["unidad_precio"]))->first();
 
         $product_title = Product::where("title",$row["nombre_producto"])->first();
-        $product_sku = Product::where("title",$row["sku"])->first();
+        $product_sku = Product::where("sku",$row["sku"])->first();
         if(!$product_categorie || !$warehouse || !$unit || !$sucursale || !$unit_price || $product_title || $product_sku){
             return Product::first();
         }
@@ -75,13 +75,13 @@ class ImportExcelProducts implements ToModel,WithHeadingRow,WithValidation
             "price_general" => $row["precio_general"],
             "price_company" => $row["precio_empresa"],
             "description" => $row["descripcion"],
-            "is_discount" => $row["descuento"] ? 2 : 1,
+            "is_discount" => $row["descuento"] ? true : false,
             "max_discount" =>$row["descuento"] ? $row["descuento"] : 0,
-            "is_gift" => $row["es_regalo"] == 'SI' ? 2 : 1,
-            "disponibilidad" => $disponibilidad,
-            "state" => $row["estado"] == 'ACTIVO' ? 1 : 2,
+            "is_gift" => $row["es_regalo"] == 'SI',
+            "disponibilidad" => $disponibilidad == 2,
+            "state" => $row["estado"] == 'ACTIVO',
             "warranty_day" => $row["dias_garantia"],
-            "tax_selected" => $tax_selected,
+            "tax_selected" => $tax_selected == 2,
             "importe_iva" => $row["importe_iva"],
         ]);
         // 2. CREAR LA EXISTENCIA DEL PRODUCTO

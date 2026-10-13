@@ -147,7 +147,21 @@ class ProductController extends Controller
             ]);
         }
 
-        $product = Product::create($request->all());
+        $data = $request->all();
+
+        // Campos donde 2 significa "SI"
+        foreach (['is_gift', 'is_discount', 'tax_selected', 'disponibilidad'] as $field) {
+            if (isset($data[$field])) {
+                $data[$field] = ((string) $data[$field] === '2');
+            }
+        }
+
+        // Estado: 1 = Activo (true), 2 = Inactivo (false)
+        if (isset($data['state'])) {
+            $data['state'] = ((string) $data['state'] === '1');
+        }
+
+        $product = Product::create($data);
 
         $product_warehouses = json_decode($request->product_warehouses,true);
         
@@ -230,7 +244,21 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
 
-        $product->update($request->all());
+        $data = $request->all();
+
+        // Campos donde 2 significa "SI"
+        foreach (['is_gift', 'is_discount', 'tax_selected', 'disponibilidad'] as $field) {
+            if (isset($data[$field])) {
+                $data[$field] = ((string) $data[$field] === '2');
+            }
+        }
+
+        // Estado: 1 = Activo (true), 2 = Inactivo (false)
+        if (isset($data['state'])) {
+            $data['state'] = ((string) $data['state'] === '1');
+        }
+
+        $product->update($data);
 
         if($request->hasFile("image")){
             $filePath = $request->file("image")->store('uploads','s3');

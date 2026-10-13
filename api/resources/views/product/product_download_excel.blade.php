@@ -34,58 +34,31 @@
                     {{$list_product->product_categorie->title}}
                 </td>
                 <td>
-                    {{$list_product->is_gift == 1 ? 'NO' : 'SI'}}
+                    {{$list_product->is_gift ? 'SI' : 'NO'}}
                 </td>
                 <td>
-                    {{$list_product->is_discount == 1 ? 'NO' : 'SI'}}
+                    {{$list_product->is_discount ? 'SI' : 'NO'}}
                     <br>
                     Descuento: {{$list_product->max_discount}} %
                 </td>
                 <td>
-                    @php
-                        $tax_name = '';
-                    @endphp
-                    @switch($list_product->tax_selected)
-                        @case(1)
-                            {{$tax_name = "Sujeto a Impuesto";}}
-                            @break
-                        @case(2)
-                            {{$tax_name = "Libre de Impuesto";}}
-                            @break
-                        @default
-                            
-                    @endswitch
-                    {{$tax_name}}
+                    {{ $list_product->tax_selected ? 'Libre de Impuesto' : 'Sujeto a Impuesto' }}
                 </td>
                 <td>
                     {{$list_product->importe_iva}} %
                 </td>
                 <td>
-                    @php
-                        $disponibilida_name = '';
-                    @endphp
-                    @switch($list_product->disponibilidad)
-                        @case(1)
-                            {{$disponibilida_name = "Vender sin Stock";}}
-                            @break
-                        @case(2)
-                            {{$disponibilida_name = "No Vender sin Stock";}}
-                            @break
-                        @default
-                            
-                    @endswitch
-                    {{$disponibilida_name}}
+                    {{ $list_product->disponibilidad ? 'No Vender sin Stock' : 'Vender sin Stock' }}
                 </td>
 
-                @if ($list_product->state == 1)
+                @if ($list_product->state)
                     <td style="background: #b6c8ff">
                         ACTIVO
                     </td>
-                    @endif
-                @if ($list_product->state == 2)
-                <td style="background: #f7a6a6;">
-                    INACTIVO
-                </td>
+                @else
+                    <td style="background: #f7a6a6;">
+                        INACTIVO
+                    </td>
                 @endif
 
                 <td>
