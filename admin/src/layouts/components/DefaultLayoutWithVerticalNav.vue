@@ -104,7 +104,7 @@ onMounted(() => {
 })
 
 // Cierre de sesión por inactividad
-const INACTIVITY_MINUTES = 5
+const INACTIVITY_MINUTES = 10
 const ACTIVITY_EVENTS = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart']
 let inactivityTimer = null
 
