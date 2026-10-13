@@ -222,6 +222,7 @@ class SaleController extends Controller
         try {
             date_default_timezone_set('America/Lima');
             DB::beginTransaction();
+            DB::enableQueryLog();
             $sale = Sale::create([
                 "user_id" => auth('api')->user()->id,
                 "sucursale_id" => auth('api')->user()->sucursale_id,
@@ -330,7 +331,8 @@ class SaleController extends Controller
             DB::commit();
         } catch (\Throwable $th) {
             \Log::error('ERROR EN VENTA: ' . $th->getMessage() . ' | ARCHIVO: ' . $th->getFile() . ' | LINEA: ' . $th->getLine());
-           DB::rollBack();
+            \Log::error('CONSULTAS: ' . json_encode(array_map(function($q){ return $q['query']; }, DB::getQueryLog())));
+            DB::rollBack();
            throw new HttpException(500,$th->getMessage());
         }
         
