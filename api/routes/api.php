@@ -196,6 +196,14 @@ Route::group([
 
     Route::delete("purchases/{id}", [PurchaseController::class, "destroy"]);
 
+        // Rutas en singular, que es lo que usa el frontend
+    Route::get("purchase/config", [PurchaseController::class, "config"]);
+    Route::post("purchase/index", [PurchaseController::class, "index"]);
+    Route::post("purchase", [PurchaseController::class, "store"]);
+    Route::get("purchase/{id}", [PurchaseController::class, "show"]);
+    Route::put("purchase/{id}", [PurchaseController::class, "update"]);
+    Route::delete("purchase/{id}", [PurchaseController::class, "destroy"]);
+
 
     /*
     |--------------------------------------------------------------------------
