@@ -18,18 +18,18 @@ class SaleResource extends JsonResource
             "id" => $this->resource->id,
             "user_id"  => $this->resource->user_id,
             "user" => [
-                "full_name" => $this->resource->user->name.' '.$this->resource->user->surname,
+                "full_name" => $this->resource->user?->name.' '.$this->resource->user?->surname,
             ],
             "client_id"  => $this->resource->client_id,
             "client" => [
-                "id" => $this->resource->client->id,
-                "full_name" => $this->resource->client->full_name,
-                "n_document" => $this->resource->client->n_document,
+                "id" => $this->resource->client?->id,
+                "full_name" => $this->resource->client?->full_name,
+                "n_document" => $this->resource->client?->n_document,
             ],
             "type_client"  => $this->resource->type_client,
             "sucursale_id"  => $this->resource->sucursale_id,
             "sucursale" => [
-                "name" => $this->resource->sucursale->name,
+                "name" => $this->resource->sucursale?->name,
             ],
             "subtotal"  => $this->resource->subtotal,
             "discount"  => $this->resource->discount,
