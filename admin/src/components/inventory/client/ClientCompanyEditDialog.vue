@@ -75,19 +75,19 @@ const update = async() => {
   }
   if(!ubigeo_region.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar un departamento de la empresa";
+      warning.value = "Se debe seleccionar un país de la empresa";
     }, 50);
     return;
   }
   if(!ubigeo_provincia.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar un municipio de la empresa";
+      warning.value = "Se debe seleccionar un departamento de la empresa";
     }, 50);
     return;
   }
   if(!ubigeo_distrito.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar un barrio de la empresa";
+      warning.value = "Se debe seleccionar una ciudad de la empresa";
     }, 50);
     return;
   }
@@ -350,9 +350,10 @@ const dialogVisibleUpdate = val => {
                 <VSelect
                     :items="REGIONES_L"
                     v-model="ubigeo_region"
+                    readonly
                     item-title="name"
                     item-value="id"
-                    label="Departamento"
+                    label="País"
                     placeholder="Seleccionar"
                     eager
                 />
@@ -365,7 +366,7 @@ const dialogVisibleUpdate = val => {
                     v-model="ubigeo_provincia"
                     item-title="name"
                     item-value="id"
-                    label="Municipio"
+                    label="Departamento"
                     placeholder="Seleccionar"
                     eager
                 />
@@ -378,7 +379,7 @@ const dialogVisibleUpdate = val => {
                     v-model="ubigeo_distrito"
                     item-title="name"
                     item-value="id"
-                    label="Barrio"
+                    label="Ciudad"
                     placeholder="Seleccionar"
                     eager
                 />

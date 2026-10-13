@@ -22,7 +22,7 @@ const n_document  = ref(null);
 const address  = ref(null);
 const type_client = ref(2);
 const birth_date = ref(null);
-const ubigeo_region = ref(null);
+const ubigeo_region = ref('01');
 const ubigeo_provincia = ref(null);
 const ubigeo_distrito = ref(null);
 const region = ref(null);
@@ -33,7 +33,7 @@ const REGIONES_L = REGIONES;
 const PROVINCIAS_L = PROVINCIAS;
 const DISTRITOS_L = DISTRITOS;
 
-const PROVINCIA_SELECTS = ref([]);
+const PROVINCIA_SELECTS = ref(PROVINCIAS.filter((p) => p.department_id == '01'));
 const DISTRITO_SELECTS = ref([]);
 
 const warning = ref(null);
@@ -70,19 +70,19 @@ const store = async() => {
   }
   if(!ubigeo_region.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar un departamento de la empresa";
+      warning.value = "Se debe seleccionar un país de la empresa";
     }, 50);
     return;
   }
   if(!ubigeo_provincia.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar un municipio de la empresa";
+      warning.value = "Se debe seleccionar un departamento de la empresa";
     }, 50);
     return;
   }
   if(!ubigeo_distrito.value){
     setTimeout(() => {
-      warning.value = "Se debe seleccionar un barrio de la empresa";
+      warning.value = "Se debe seleccionar una ciudad de la empresa";
     }, 50);
     return;
   }
@@ -144,7 +144,7 @@ const store = async() => {
       type_document.value = 'RUC';
       n_document.value = '';
       address.value = '';
-      ubigeo_region.value = '';
+      ubigeo_region.value = '01';
       ubigeo_provincia.value = '';
       ubigeo_distrito.value = '';
       birth_date.value = null;
@@ -325,9 +325,10 @@ const dialogVisibleUpdate = val => {
                 <VSelect
                     :items="REGIONES_L"
                     v-model="ubigeo_region"
+                    readonly
                     item-title="name"
                     item-value="id"
-                    label="Departamento"
+                    label="País"
                     placeholder="Seleccionar"
                     eager
                 />
@@ -340,7 +341,7 @@ const dialogVisibleUpdate = val => {
                     v-model="ubigeo_provincia"
                     item-title="name"
                     item-value="id"
-                    label="Municipio"
+                    label="Departamento"
                     placeholder="Seleccionar"
                     eager
                 />
@@ -353,7 +354,7 @@ const dialogVisibleUpdate = val => {
                     v-model="ubigeo_distrito"
                     item-title="name"
                     item-value="id"
-                    label="Barrio"
+                    label="Ciudad"
                     placeholder="Seleccionar"
                     eager
                 />
