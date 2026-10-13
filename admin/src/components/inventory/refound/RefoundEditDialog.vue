@@ -121,7 +121,7 @@ onMounted(() => {
                     :items="[
                     {
                         id: 1,
-                        title: 'Reparación'
+                        title: 'Diagnostico'
                     },
                     {
                         id: 2,

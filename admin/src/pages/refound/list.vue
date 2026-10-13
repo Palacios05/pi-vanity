@@ -186,7 +186,7 @@
                                     :items="[
                                     {
                                         id: 1,
-                                        title: 'Reparación'
+                                        title: 'Diagnostico'
                                     },
                                     {
                                         id: 2,
@@ -349,7 +349,7 @@
                     </td>
                     <td>
                         <VChip color="primary" v-if="item.type == 1">
-                            Reparación
+                            Diagnostico
                         </VChip>
                         <VChip color="success" v-if="item.type == 2">
                             Remplazo
