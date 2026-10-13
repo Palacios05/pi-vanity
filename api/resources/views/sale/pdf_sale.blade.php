@@ -493,9 +493,9 @@
                         src="{{ public_path('laravest.png') }}"
                     >
                     <br>
-                    <small>https://www.laravest.com/</small>
+                    <small>https://vanitymagic.online/</small>
                     <br>
-                    <small>echodeveloper960@gmail.com</small>
+                    <small>Vanityandmagic@gmail.com</small>
                 </td>
             </tr>
         </tbody>
