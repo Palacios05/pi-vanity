@@ -2,46 +2,6 @@
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import avatar1 from '@images/avatars/avatar-1.png'
 
-const userProfileList = [
-  { type: 'divider' },
-  {
-    type: 'navItem',
-    icon: 'ri-user-line',
-    title: 'Profile',
-    href: '#',
-  },
-  {
-    type: 'navItem',
-    icon: 'ri-settings-4-line',
-    title: 'Settings',
-    href: '#',
-  },
-  {
-    type: 'navItem',
-    icon: 'ri-file-text-line',
-    title: 'Billing Plan',
-    href: '#',
-    chipsProps: {
-      color: 'error',
-      text: '4',
-      size: 'small',
-    },
-  },
-  { type: 'divider' },
-  {
-    type: 'navItem',
-    icon: 'ri-money-dollar-circle-line',
-    title: 'Pricing',
-    href: '#',
-  },
-  {
-    type: 'navItem',
-    icon: 'ri-question-line',
-    title: 'FAQ',
-    href: '#',
-  },
-]
-
 const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
 const router = useRouter();
 const logout = async() => {
@@ -94,54 +54,19 @@ const logout = async() => {
             </div>
           </VListItem>
 
-          <PerfectScrollbar :options="{ wheelPropagation: false }">
-            <template
-              v-for="item in userProfileList"
-              :key="item.title"
+          <VDivider class="my-1" />
+
+          <VListItem class="px-4">
+            <VBtn
+              block
+              color="error"
+              size="small"
+              append-icon="ri-logout-box-r-line"
+              @click="logout"
             >
-              <VListItem
-                v-if="item.type === 'navItem'"
-                :href="item.href"
-                class="px-4"
-              >
-                <template #prepend>
-                  <VIcon
-                    :icon="item.icon"
-                    size="22"
-                  />
-                </template>
-
-                <VListItemTitle>{{ item.title }}</VListItemTitle>
-
-                <template
-                  v-if="item.chipsProps"
-                  #append
-                >
-                  <VChip
-                    v-bind="item.chipsProps"
-                    variant="elevated"
-                  />
-                </template>
-              </VListItem>
-
-              <VDivider
-                v-else
-                class="my-1"
-              />
-            </template>
-
-            <VListItem class="px-4">
-              <VBtn
-                block
-                color="error"
-                size="small"
-                append-icon="ri-logout-box-r-line"
-                @click="logout"
-              >
-                Logout
-              </VBtn>
-            </VListItem>
-          </PerfectScrollbar>
+              Cerrar sesión
+            </VBtn>
+          </VListItem>
         </VList>
       </VMenu>
       <!-- !SECTION -->
