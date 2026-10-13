@@ -17,7 +17,7 @@ const emit = defineEmits([
 const full_name = ref(null);
 const email  = ref(null);
 const phone  = ref(null);
-const type_document  = ref('DNI');
+const type_document  = ref('Cédula de Ciudadanía');
 const n_document  = ref(null);
 const address  = ref(null);
 const name = ref(null);
@@ -155,7 +155,7 @@ const store = async() => {
       surname.value = '';
       email.value = '';
       phone.value = '';
-      type_document.value = 'DNI';
+      type_document.value = 'Cédula de Ciudadanía';
       n_document.value = '';
       gender.value = 'M';
       address.value = '';
