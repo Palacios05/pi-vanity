@@ -45,7 +45,7 @@ class ProviderController extends Controller
         if($is_provider_exists){
             return response()->json([
                 "message" => 403,
-                "message_text" => "EL PROVEDOR YA EXISTE, INTENTE UN RUC DIFERENTE"
+                "message_text" => "EL PROVEDOR YA EXISTE, INTENTE UN NIT DIFERENTE"
             ]);
         }
 
@@ -88,7 +88,7 @@ class ProviderController extends Controller
         if($is_provider_exists){
             return response()->json([
                 "message" => 403,
-                "message_text" => "EL PROVEDOR YA EXISTE, INTENTE UN RUC DIFERENTE"
+                "message_text" => "EL PROVEDOR YA EXISTE, INTENTE UN NIT DIFERENTE"
             ]);
         }
         $provider = Provider::findOrFail($id);
