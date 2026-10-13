@@ -188,18 +188,10 @@ class ProductController extends Controller
         }
 
         if($request->hasFile("image")){
-            $filePath = $request->file("image")->store('uploads','s3');
-            if($filePath == false){
-                $path = Storage::putFile("products",$request->file("image"));
-                $product->update([
-                    "imagen" => $path,
-                ]);
-            }else{
-                $url = Storage::disk('s3')->url($filePath);
-                $product->update([
-                    "imagen" => $url,
-                ]);
-            }
+            $path = $request->file("image")->store('products','public');
+            $product->update([
+                "imagen" => $path,
+            ]);
         }
 
         return response()->json([
@@ -261,24 +253,13 @@ class ProductController extends Controller
         $product->update($data);
 
         if($request->hasFile("image")){
-            $filePath = $request->file("image")->store('uploads','s3');
-            if($filePath == false){
-                if($product->imagen){
-                    Storage::delete($product->imagen);
-                }
-                $path = Storage::putFile("products",$request->file("image"));
-                $product->update([
-                    "imagen" => $path,
-                ]);
-            }else{
-                if($product->imagen){
-                    Storage::disk("s3")->delete($product->imagen);
-                }
-                $url = Storage::disk('s3')->url($filePath);
-                $product->update([
-                    "imagen" => $url,
-                ]);
+            if($product->imagen && !str_starts_with($product->imagen, 'http')){
+                Storage::disk('public')->delete($product->imagen);
             }
+            $path = $request->file("image")->store('products','public');
+            $product->update([
+                "imagen" => $path,
+            ]);
         }
         return response()->json([
             "message" => 200,
