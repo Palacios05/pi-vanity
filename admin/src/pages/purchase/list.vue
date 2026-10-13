@@ -68,7 +68,7 @@
 
     const config = async() => {
         try {
-            const resp = await $api("purchase/config",{
+            const resp = await $api("purchases/config",{
                 method:'GET',
                 onResponseError({response}){
                     console.log(response._data.error);
