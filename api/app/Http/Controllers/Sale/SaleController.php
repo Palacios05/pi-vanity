@@ -240,6 +240,8 @@ class SaleController extends Controller
                 "description" => $request->description,
             ]);
 
+            \Log::info('MARCA 1: venta creada con id ' . $sale->id);
+
             $state_entrega = 1;$counter_complete = 0;
             foreach ($sale_details as $key => $sale_detail) {
                 $state_attention = 1;//1 PENDIENTE, 2 PARCIAL 3 COMPLETO
@@ -247,6 +249,7 @@ class SaleController extends Controller
                 $quantity_pending = $sale_detail["quantity"];
                 if($sale->state_sale == 1){
                     // LA DISTRUBICIÓN DE STOCK
+                    \Log::info('MARCA 2: buscando stock del producto ' . $sale_detail["product"]["id"]);
                     $warehouse_product = ProductWarehouse::where("product_id",$sale_detail["product"]["id"])
                                                             ->where("warehouse_id",$sale_detail["warehouse_id"])
                                                             ->where("unit_id",$sale_detail["unit_id"])
@@ -326,6 +329,7 @@ class SaleController extends Controller
 
             DB::commit();
         } catch (\Throwable $th) {
+            \Log::error('ERROR EN VENTA: ' . $th->getMessage() . ' | ARCHIVO: ' . $th->getFile() . ' | LINEA: ' . $th->getLine());
            DB::rollBack();
            throw new HttpException(500,$th->getMessage());
         }
