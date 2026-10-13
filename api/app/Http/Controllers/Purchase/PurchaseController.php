@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Purchase;
 use App\Models\Config\Unit;
 use Illuminate\Http\Request;
 use App\Models\Config\Provider;
-use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Config\Warehouse;
 use App\Models\Purchase\Purchase;
 use App\Http\Controllers\Controller;
@@ -63,14 +63,19 @@ class PurchaseController extends Controller
             "today" => now()->format("Y-m-d")
         ]);
     }
-
-    public function sale_pdf($id) {
+ 
+    public function sale_pdf($id)
+    {
         $purchase = Purchase::findOrFail($id);
 
-        $pdf = PDF::loadView("purchase.pdf_purchase",compact('purchase'));
+        $pdf = Pdf::loadView(
+            "purchase.pdf_purchase",
+            compact('purchase')
+        );
 
-        return $pdf->stream("purchase".$purchase->id.".pdf");
+        return $pdf->stream("purchase" . $purchase->id . ".pdf");
     }
+
     /**
      * Store a newly created resource in storage.
      */
