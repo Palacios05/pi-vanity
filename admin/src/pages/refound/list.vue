@@ -306,6 +306,9 @@
                         Tipo
                     </th>
                     <th class="text-uppercase">
+                        Estado
+                    </th>
+                    <th class="text-uppercase">
                         Fecha de registro
                     </th>
                     <th class="text-uppercase">
@@ -357,6 +360,15 @@
                         <VChip color="warning" v-if="item.type == 3">
                             Devolución
                         </VChip>
+                    </td>
+                    <td>
+                        <template v-if="item.type == 1">
+                            <VChip color="secondary" v-if="item.state == 1">Pendiente</VChip>
+                            <VChip color="info" v-if="item.state == 2">Revisión</VChip>
+                            <VChip color="success" v-if="item.state == 3">Reparado</VChip>
+                            <VChip color="error" v-if="item.state == 4">Descartado</VChip>
+                        </template>
+                        <span v-else>---</span>
                     </td>
                     <td>
                         {{ item.created_at }}
