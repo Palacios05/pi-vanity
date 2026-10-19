@@ -84,7 +84,7 @@
 
     onMounted(() => {
       information_general();
-      asesor_most_sales();
+      // asesor_most_sales();
     })
 </script>
 <template>
