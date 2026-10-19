@@ -215,3 +215,10 @@ export function isPermission(permission) {
     }
     return false;
 }
+
+// Formato de pesos colombianos: $ 46.160
+export const formatCOP = (value) => {
+  const n = Number(value)
+  if (isNaN(n)) return '$ 0'
+  return '$ ' + new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(n)
+}

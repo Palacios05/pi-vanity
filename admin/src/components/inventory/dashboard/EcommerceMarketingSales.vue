@@ -111,7 +111,7 @@ onMounted(() => {
         <VCardItem>
           <VCardTitle class="text-white">{{ item.name }}</VCardTitle>
           <VCardSubtitle class="text-white">
-            Total $ {{ item.sales_total_sucursal }}
+            Total {{ formatCOP(item.sales_total_sucursal) }}
 
             <div class="d-inline-block text-success font-weight-medium" v-if="item.variation_perncetage_sale_total >= 0">
               <div class="d-flex align-center">
@@ -190,7 +190,7 @@ onMounted(() => {
                       style="background-color: rgba(var(--v-theme-on-surface), var(--v-selected-opacity));"
                       class="rounded px-2 py-1 text-body-1 text-white font-weight-medium"
                     >
-                      $ {{ item.amount_total_payment }}
+                      {{ formatCOP(item.amount_total_payment) }}
                     </div>
                     <div class="text-body-1 text-white text-truncate">
                       Monto Pagado
@@ -205,7 +205,7 @@ onMounted(() => {
                       style="background-color: rgba(var(--v-theme-on-surface), var(--v-selected-opacity));"
                       class="rounded px-2 py-1 text-body-1 text-white font-weight-medium"
                     >
-                    $ {{ item.amount_total_not_payment }}
+                    {{ formatCOP(item.amount_total_not_payment) }}
                     </div>
                     <div class="text-body-1 text-white text-truncate">
                      Monto Adeudado

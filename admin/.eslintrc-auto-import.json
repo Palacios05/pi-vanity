@@ -352,6 +352,7 @@
     "watchWithFilter": true,
     "whenever": true,
     "PERMISOS": true,
-    "isPermission": true
+    "isPermission": true,
+    "formatCOP": true
   }
 }

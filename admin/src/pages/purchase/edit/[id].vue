@@ -586,9 +586,9 @@
                                 </td>
                                 <td>{{ purchase_detail.product.title }}</td>
                                 <td>{{ purchase_detail.unit.name }}</td>
-                                <td>$ {{ purchase_detail.price_unit }}</td>
+                                <td>{{ formatCOP(purchase_detail.price_unit) }}</td>
                                 <td>{{ purchase_detail.quantity }}</td>
-                                <td>$ {{ purchase_detail.total }}</td>
+                                <td>{{ formatCOP(purchase_detail.total) }}</td>
                                 <td class="d-flex align-center"> 
                                     <IconBtn
                                         size="small"

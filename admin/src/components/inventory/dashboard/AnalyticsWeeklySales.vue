@@ -150,13 +150,13 @@ const sales_for_month_year = async() => {
     salesReport.value = [
       {
         title: 'Ventas - '+year_selected.value,
-        amount: "$ " +resp.total_sales_year_current,
+        amount: formatCOP(resp.total_sales_year_current),
         avatarColor: 'primary',
         avatarIcon: 'ri-funds-line',
       },
       {
         title: 'Ventas - '+(Number(year_selected.value) - 1),
-        amount: "$ " +resp.total_sales_year_before,
+        amount: formatCOP(resp.total_sales_year_before),
         avatarColor: 'warning',
         avatarIcon: 'ri-money-dollar-circle-line',
       },

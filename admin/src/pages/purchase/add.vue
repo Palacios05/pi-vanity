@@ -465,9 +465,9 @@
                             <tr v-for="(purchase_detail, index) in purchase_details" :key="index">
                                 <td>{{ purchase_detail.product.title }}</td>
                                 <td>{{ purchase_detail.unit.name }}</td>
-                                <td>$ {{ purchase_detail.price_unit }}</td>
+                                <td>{{ formatCOP(purchase_detail.price_unit) }}</td>
                                 <td>{{ purchase_detail.quantity }}</td>
-                                <td>$ {{ purchase_detail.total }}</td>
+                                <td>{{ formatCOP(purchase_detail.total) }}</td>
                                 <td>
                                     <IconBtn
                                         size="small"

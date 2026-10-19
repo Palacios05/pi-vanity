@@ -927,22 +927,22 @@
                                         {{ sale_detail.unit.name }}
                                     </td>
                                     <td style="white-space: nowrap;">
-                                       $ {{ sale_detail.price }}
+                                       {{ formatCOP(sale_detail.price) }}
                                     </td>
                                     <td>
                                         {{ sale_detail.quantity }}
                                     </td>
                                     <td style="white-space: nowrap;">
-                                       $ {{ sale_detail.discount }}
+                                       {{ formatCOP(sale_detail.discount) }}
                                     </td>
                                     <td style="white-space: nowrap;">
-                                        $ {{ sale_detail.igv }}
+                                        {{ formatCOP(sale_detail.igv) }}
                                     </td>
                                     <td style="white-space: nowrap;">
-                                        $ {{ sale_detail.subtotal }}
+                                        {{ formatCOP(sale_detail.subtotal) }}
                                     </td>
                                     <td style="white-space: nowrap;">
-                                        $ {{ sale_detail.total }}
+                                        {{ formatCOP(sale_detail.total) }}
                                     </td>
                                     <td>
                                         <div class="d-flex gap-1">
@@ -972,19 +972,19 @@
                         <table style="width: 100%;">
                             <tr>
                                 <td>Impuestos</td>
-                                <td>$ {{ igv_total }}</td>
+                                <td>{{ formatCOP(igv_total) }}</td>
                             </tr>
                             <tr>
                                 <td>Descuento</td>
-                                <td>$ {{ discount_total }}</td>
+                                <td>{{ formatCOP(discount_total) }}</td>
                             </tr>
                             <tr>
                                 <td>SubTotal</td>
-                                <td>$ {{ subtotal_original }}</td>
+                                <td>{{ formatCOP(subtotal_original) }}</td>
                             </tr>
                             <tr>
                                 <td>Total</td>
-                                <td>$ {{ total_all }}</td>
+                                <td>{{ formatCOP(total_all) }}</td>
                             </tr>
                         </table>
                     </VCol>
@@ -1056,7 +1056,7 @@
                                                 {{ payment.method_payment }}
                                             </td>
                                             <td>
-                                                $ {{ payment.amount }}
+                                                {{ formatCOP(payment.amount) }}
                                             </td>
                                             <td>
                                                 <IconBtn
@@ -1075,12 +1075,12 @@
                                         </tr>
                                         <tr>
                                             <td>Total</td>
-                                            <td>$ {{ payment_total }}</td>
+                                            <td>{{ formatCOP(payment_total) }}</td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <td>Deuda</td>
-                                            <td>$ {{ (total_all - payment_total).toFixed(2) }}</td>
+                                            <td>{{ formatCOP((total_all - payment_total).toFixed(2)) }}</td>
                                             <td></td>
                                         </tr>
                                     </tbody>

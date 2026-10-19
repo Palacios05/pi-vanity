@@ -131,7 +131,7 @@ onMounted(() => {
                                 {{ sale_detail.quantity }}
                             </td>
                             <td style="text-wrap-mode: nowrap;">
-                                $ {{ sale_detail.total }}
+                                {{ formatCOP(sale_detail.total) }}
                             </td>
                         </tr>
                     </tbody>

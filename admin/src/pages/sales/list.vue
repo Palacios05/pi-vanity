@@ -395,10 +395,10 @@
                         {{ item.user.full_name }}
                     </td>
                     <td style="text-wrap-mode: nowrap;">
-                       $ {{ item.total }}
+                       {{ formatCOP(item.total) }}
                     </td>
                     <td style="text-wrap-mode: nowrap;">
-                        $ {{ item.debt }} / $ {{ item.paid_out }}
+                        {{ formatCOP(item.debt) }} / {{ formatCOP(item.paid_out) }}
                     </td>
                     <td>
                         {{ item.state_sale == 1 ? 'VENTA' : 'COTIZACIÓN' }}

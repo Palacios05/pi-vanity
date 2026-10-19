@@ -56,7 +56,7 @@
         </div>
       </div>
       <h4 class="text-h4">
-        $ {{ sale_total_payment_complete_month_current }}
+        {{ formatCOP(sale_total_payment_complete_month_current) }}
       </h4>
     </VCardText>
 

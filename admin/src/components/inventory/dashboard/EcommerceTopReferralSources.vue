@@ -379,7 +379,7 @@ onMounted(() => {
           </td>
 
           <td class="text-end font-weight-medium">
-            $ {{ product.total_sales }}
+            {{ formatCOP(product.total_sales) }}
           </td>
 
           <td class="font-weight-medium text-end">

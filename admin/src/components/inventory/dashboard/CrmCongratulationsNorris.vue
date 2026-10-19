@@ -36,7 +36,7 @@ onMounted(() => {
         </div>
       </div>
       <h4 class="text-h4 text-primary">
-        $ {{ client_most_sale ? client_most_sale.total_sales : 0 }}
+        {{ formatCOP(client_most_sale ? client_most_sale.total_sales : 0) }}
       </h4>
       <div class="text-body-1 mb-3 text-success" v-if="variation_percentage_client_most_sale >= 0">
         + {{variation_percentage_client_most_sale}}%<span class="text-high-emphasis">🚀</span>
