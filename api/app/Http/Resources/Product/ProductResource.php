@@ -21,8 +21,8 @@ class ProductResource extends JsonResource
             "imagen" => $this->resource->product_imagen,
             "product_categorie_id" => $this->resource->product_categorie_id,
             "product_categorie" => [
-                "id" => $this->resource->product_categorie->id,
-                "name" => $this->resource->product_categorie->title,
+                "id" => $this->resource->product_categorie?->id,
+                "name" => $this->resource->product_categorie?->title,
             ],
             "price_general" => $this->resource->price_general,
             "price_company" => $this->resource->price_company,
@@ -37,16 +37,17 @@ class ProductResource extends JsonResource
             "tax_selected" => $this->resource->tax_selected ? 2 : 1,
             "importe_iva" => $this->resource->importe_iva,
             "created_at" => $this->resource->created_at->format("Y/m/d h:i A"),
+            "stock_total" => $this->resource->warehouses->sum("stock"),
             "warehouses" => $this->resource->warehouses->map(function($warehouse) {
                 return [
                     "id" => $warehouse->id,
                     "warehouse_id" => $warehouse->warehouse_id,
                     "warehouse" => [
-                        "name" => $warehouse->warehouse->name,
+                        "name" => $warehouse->warehouse?->name,
                     ],
                     "unit_id" => $warehouse->unit_id,
                     "unit" => [
-                        "name" => $warehouse->unit->name,
+                        "name" => $warehouse->unit?->name,
                     ],
                     "stock" => $warehouse->stock,
                     "umbral" => $warehouse->umbral,
@@ -64,7 +65,7 @@ class ProductResource extends JsonResource
                     ] : NULL,
                     "unit_id" => $wallet->unit_id,
                     "unit" => [
-                        "name" => $wallet->unit->name,
+                        "name" => $wallet->unit?->name,
                     ],
                     "price" => $wallet->price,
                 ];

@@ -6,6 +6,7 @@
             <th  width="25">Precio - Cliente Final</th>
             <th  width="25">Precio - Cliente Empresa</th>
             <th  width="25">Categoria</th>
+            <th  width="25">Stock disponible</th>
             <th  width="25">¿Es regalo?</th>
             <th  width="25">¿Descuento?</th>
             <th  width="25">Tipo de Impuesto</th>
@@ -31,7 +32,10 @@
                     {{$list_product->price_company}}
                 </td>
                 <td>
-                    {{$list_product->product_categorie->title}}
+                    {{$list_product->product_categorie?->title}}
+                </td>
+                <td>
+                    {{ $list_product->warehouses->sum('stock') }}
                 </td>
                 <td>
                     {{$list_product->is_gift ? 'SI' : 'NO'}}

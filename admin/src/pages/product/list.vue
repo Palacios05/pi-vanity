@@ -331,6 +331,9 @@
                         Categoria
                     </th>
                     <th class="text-uppercase">
+                        Stock disponible
+                    </th>
+                    <th class="text-uppercase">
                         ¿Es un regalo?
                     </th>
                     <th class="text-uppercase">
@@ -350,7 +353,7 @@
                         Fecha de registro
                     </th>
                     <th class="text-uppercase">
-                        Action
+                        Acciones
                     </th>
                 </tr>
                </thead>
@@ -396,6 +399,11 @@
                     </td>
                     <td>
                         {{ item.product_categorie.name }}
+                    </td>
+                    <td>
+                        <VChip :color="item.stock_total > 0 ? 'success' : 'error'">
+                            {{ item.stock_total }} unidades
+                        </VChip>
                     </td>
                     <td>
                         {{ item.is_gift == 1 ? 'NO' : 'SI' }}
