@@ -116,7 +116,7 @@
             <!-- 👉 Total Visits -->
             <VCol
                 cols="12"
-                md="3"
+                md="6"
                 sm="6"
             >
                 <EcommerceTotalVisits />
@@ -130,7 +130,7 @@
 
             <VCol
                 cols="12"
-                md="3"
+                md="6"
                 sm="6"
             >
                 <CrmCongratulationsNorris />
