@@ -181,12 +181,10 @@ class UserController extends Controller
 
         $user->update($data);
         // CONTADOR -> ADMINISTRADOR DE CUENTA
-        if($request->role_id != $user->role_id){
-            $role_old =  Role::findOrFail($user->role_id);
-            $user->removeRole($role_old);
-
+        if($request->filled('role_id')){
             $role_new = Role::findOrFail($request->role_id);
-            $user->assignRole($role_new);
+            $user->syncRoles([$role_new]);
+            $user->load('roles');
         }
 
         return response()->json([
