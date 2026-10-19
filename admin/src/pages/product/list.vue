@@ -384,13 +384,13 @@
                                 {{ item.title }}
                             </div>
                         </div>
-                        <VChip color="primary" v-if="item.state_stock == 1">
+                        <VChip color="primary" class="mt-2 mb-2" size="small" v-if="item.state_stock == 1">
                             DISPONIBLE
                         </VChip>
-                        <VChip color="warning" v-if="item.state_stock == 2">
+                        <VChip color="warning" class="mt-2 mb-2" size="small" v-if="item.state_stock == 2">
                             POR AGOTAR
                         </VChip>
-                        <VChip color="error" v-if="item.state_stock == 3">
+                        <VChip color="error" class="mt-2 mb-2" size="small" v-if="item.state_stock == 3">
                             AGOTADO
                         </VChip>
                     </td>

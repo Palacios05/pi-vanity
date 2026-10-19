@@ -14,3 +14,8 @@
   justify-content: flex-end;
   gap: 8px;
 }
+
+/* Más espacio vertical en las filas de las tablas */
+.v-table > .v-table__wrapper > table > tbody > tr > td {
+  padding-block: 10px;
+}
