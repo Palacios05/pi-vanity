@@ -142,7 +142,7 @@ onMounted(() => {
               <img
                 width="86"
                 height="102"
-                :src="accountLogo"
+                src="/images/logo.png" style="object-fit:contain;background:#fff;padding:6px"
                 class="rounded"
               >
             </div>
